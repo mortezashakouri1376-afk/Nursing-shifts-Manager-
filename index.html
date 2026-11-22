@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-v12-theme="obsidian-gold">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>چت‌روم تخصصی و بانک آموزشی بخش‌های بیمارستان</title>
+  <style>
+    :root,
+    html[data-v12-theme="obsidian-gold"] {
+      --bg-grad: radial-gradient(circle at 12% 10%, rgba(212,175,55,0.16), transparent 45%),
+                 radial-gradient(circle at 88% 85%, rgba(56,189,248,0.11), transparent 48%),
+                 linear-gradient(160deg, #070a11 0%, #0f1626 55%, #090d16 100%);
+      --card: rgba(18, 25, 40, 0.78);
+      --card-solid: #131a29;
+      --msg-in: rgba(25, 35, 56, 0.85);
+      --msg-out: linear-gradient(135deg, rgba(212,175,55,0.24), rgba(180,138,24,0.16));
+      --msg-edu: linear-gradient(135deg, rgba(16,185,129,0.20), rgba(14,165,233,0.14));
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: rgba(212, 175, 55, 0.28);
+      --input-bg: rgba(9, 14, 24, 0.84);
+      --accent: #d4af37;
+      --accent-contrast: #0b0f19;
+      --danger: #ef4444;
+      --success: #10b981;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.48);
+    }
+
+    html[data-v12-theme="emerald-crystal"] {
+      --bg-grad: radial-gradient(circle at 15% 12%, rgba(16,185,129,0.22), transparent 46%),
+                 radial-gradient(circle at 85% 84%, rgba(20,184,166,0.18), transparent 50%),
+                 linear-gradient(160deg, #04110f 0%, #0a2420 55%, #061715 100%);
+      --card: rgba(10, 34, 30, 0.78);
+      --card-solid: #0a231f;
+      --msg-in: rgba(13, 46, 40, 0.86);
+      --msg-out: linear-gradient(135deg, rgba(16,185,129,0.28), rgba(20,184,166,0.18));
+      --msg-edu: linear-gradient(135deg, rgba(212,175,55,0.22), rgba(16,185,129,0.15));
+      --text: #ecfdf5;
+      --muted: #86b8ab;
+      --border: rgba(52, 211, 153, 0.30);
+      --input-bg: rgba(5, 22, 19, 0.84);
+      --accent: #10b981;
+      --accent-contrast: #04110f;
+      --danger: #f87171;
+      --success: #34d399;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    html[data-v12-theme="sapphire-clinical"] {
+      --bg-grad: radial-gradient(circle at 15% 15%, rgba(56,189,248,0.20), transparent 46%),
+                 radial-gradient(circle at 85% 80%, rgba(99,102,241,0.18), transparent 50%),
+                 linear-gradient(160deg, #060e1c 0%, #0d1d38 55%, #081226 100%);
+      --card: rgba(15, 29, 54, 0.78);
+      --card-solid: #0f1d36;
+      --msg-in: rgba(20, 39, 72, 0.86);
+      --msg-out: linear-gradient(135deg, rgba(56,189,248,0.26), rgba(99,102,241,0.18));
+      --msg-edu: linear-gradient(135deg, rgba(16,185,129,0.22), rgba(56,189,248,0.14));
+      --text: #f0f9ff;
+      --muted: #93b4d8;
+      --border: rgba(56, 189, 248, 0.30);
+      --input-bg: rgba(7, 16, 33, 0.84);
+      --accent: #38bdf8;
+      --accent-contrast: #06101f;
+      --danger: #f87171;
+      --success: #34d399;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    html[data-v12-theme="pearl-light"] {
+      --bg-grad: radial-gradient(circle at 15% 12%, rgba(212,175,55,0.14), transparent 45%),
+                 radial-gradient(circle at 85% 85%, rgba(14,165,233,0.12), transparent 50%),
+                 linear-gradient(160deg, #f8fafc 0%, #edf2f7 55%, #e2e8f0 100%);
+      --card: rgba(255, 255, 255, 0.86);
+      --card-solid: #ffffff;
+      --msg-in: #ffffff;
+      --msg-out: linear-gradient(135deg, rgba(15,118,110,0.14), rgba(14,165,233,0.10));
+      --msg-edu: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(16,185,129,0.10));
+      --text: #0f172a;
+      --muted: #475569;
+      --border: rgba(15, 23, 42, 0.14);
+      --input-bg: #ffffff;
+      --accent: #0f766e;
+      --accent-contrast: #ffffff;
+      --danger: #dc2626;
+      --success: #059669;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    html[data-v12-theme="classic-dark"] {
+      --bg-grad: #121212;
+      --card: #1e1e1e;
+      --card-solid: #1e1e1e;
+      --msg-in: #262626;
+      --msg-out: #1f3327;
+      --msg-edu: #24303c;
+      --text: #e8e8e8;
+      --muted: #9e9e9e;
+      --border: #333333;
+      --input-bg: #242424;
+      --accent: #27ae60;
+      --accent-contrast: #ffffff;
+      --danger: #e74c3c;
+      --success: #2ecc71;
+      --shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      margin: 0; padding: 0; height: 100%; width: 100%;
+      font-family: 'Vazirmatn', 'Tahoma', system-ui, sans-serif;
+      background: var(--bg-grad); background-attachment: fixed;
+      color: var(--text); overflow: hidden;
+    }
+
+    /* ============== LOGIN / WARD SELECTOR SCREEN ============== */
+    #authScreen {
+      position: fixed; inset: 0; z-index: 50;
+      overflow-y: auto; padding: 20px 14px 40px;
+      display: flex; align-items: flex-start; justify-content: center;
+    }
+    .auth-card {
+      width: min(560px, 100%); margin: auto 0;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 22px; padding: 20px;
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+    }
+    .auth-head {
+      display: flex; justify-content: space-between; align-items: center; gap: 10px;
+      border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 16px;
+    }
+    .auth-head h1 { margin: 0; font-size: 17px; color: var(--accent); }
+    .auth-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    .field { margin-bottom: 12px; }
+    .field label { display: block; font-size: 12px; font-weight: bold; color: var(--muted); margin-bottom: 5px; }
+    .field input, .field select {
+      width: 100%; padding: 11px 12px; border-radius: 12px;
+      background: var(--input-bg); color: var(--text);
+      border: 1px solid var(--border); font-family: inherit; font-size: 14px;
+    }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 480px) { .row2 { grid-template-columns: 1fr; } }
+
+    .ward-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 8px; margin-top: 6px;
+    }
+    .ward-tile {
+      background: var(--input-bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 10px; text-align: right;
+      cursor: pointer; color: var(--text); font-family: inherit; transition: 0.15s;
+    }
+    .ward-tile:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .ward-tile.selected {
+      border: 2px solid var(--accent);
+      background: linear-gradient(135deg, rgba(212,175,55,0.16), transparent);
+      box-shadow: 0 0 0 2px rgba(212,175,55,0.14);
+    }
+    .ward-tile .wt-top { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: bold; }
+    .ward-tile .wt-desc { font-size: 10.5px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+    .ward-tile .wt-meta { font-size: 10px; color: var(--accent); margin-top: 5px; }
+
+    .btn-main {
+      width: 100%; padding: 13px; border: none; border-radius: 14px;
+      background: var(--accent); color: var(--accent-contrast);
+      font-family: inherit; font-size: 15px; font-weight: bold;
+      cursor: pointer; margin-top: 6px; box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+    }
+    .btn-main:disabled { opacity: 0.55; cursor: not-allowed; }
+    .auth-err {
+      background: rgba(239,68,68,0.16); border: 1px solid rgba(239,68,68,0.45);
+      color: #fca5a5; border-radius: 10px; padding: 9px 11px;
+      font-size: 12px; margin-bottom: 10px; display: none;
+    }
+    html[data-v12-theme="pearl-light"] .auth-err { color: #b91c1c; }
+    .auth-hint {
+      margin-top: 12px; font-size: 11px; color: var(--muted); line-height: 1.7;
+      background: rgba(128,128,128,0.08); border: 1px dashed var(--border);
+      border-radius: 10px; padding: 8px 10px;
+    }
+
+    /* ============== MAIN CHAT SHELL ============== */
+    #chatApp {
+      display: none; height: 100dvh; width: 100%;
+      flex-direction: column; overflow: hidden;
+    }
+    #chatApp.active { display: flex; }
+
+    /* Top Header */
+    .chat-header {
+      flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; padding: 10px 12px;
+      background: var(--card); border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      z-index: 10;
+    }
+    .ch-info { display: flex; align-items: center; gap: 9px; min-width: 0; }
+    .ch-icon {
+      width: 38px; height: 38px; border-radius: 12px; flex: 0 0 38px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; background: var(--input-bg); border: 1px solid var(--border);
+    }
+    .ch-titles { min-width: 0; }
+    .ch-titles h2 {
+      margin: 0; font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .ch-status {
+      font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 6px;
+    }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); display: inline-block; box-shadow: 0 0 6px var(--success); }
+    .live-dot.off { background: #f59e0b; box-shadow: none; }
+
+    .ch-actions { display: flex; align-items: center; gap: 5px; flex: 0 0 auto; }
+    .icon-btn {
+      background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
+      border-radius: 10px; padding: 6px 9px; font-size: 12px; font-family: inherit;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 4px;
+    }
+    .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Filter & Search Bar */
+    .toolbar-bar {
+      flex: 0 0 auto; padding: 8px 10px;
+      background: rgba(0,0,0,0.14); border-bottom: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 7px;
+    }
+    .filter-chips {
+      display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;
+    }
+    .filter-chips::-webkit-scrollbar { display: none; }
+    .f-chip {
+      flex: 0 0 auto; padding: 5px 11px; border-radius: 999px;
+      background: var(--card); color: var(--muted); border: 1px solid var(--border);
+      font-size: 11.5px; font-family: inherit; cursor: pointer; transition: 0.15s;
+    }
+    .f-chip.active {
+      background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); font-weight: bold;
+    }
+    .search-row { display: none; gap: 6px; }
+    .search-row.open { display: flex; }
+    .search-row input {
+      flex: 1; padding: 7px 10px; border-radius: 10px;
+      background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
+      font-family: inherit; font-size: 13px;
+    }
+
+    /* Pinned Banner */
+    #pinnedBar {
+      flex: 0 0 auto; display: none; align-items: center; justify-content: space-between; gap: 8px;
+      padding: 7px 12px; background: rgba(212,175,55,0.14); border-bottom: 1px solid var(--border);
+      font-size: 12px; cursor: pointer;
+    }
+    #pinnedBar.show { display: flex; }
+    .pin-snippet { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+
+    /* Privacy Notice */
+    .privacy-strip {
+      flex: 0 0 auto; padding: 4px 10px; text-align: center;
+      font-size: 10.5px; color: var(--muted);
+      background: rgba(239,68,68,0.08); border-bottom: 1px solid rgba(239,68,68,0.16);
+    }
+
+    /* Messages Stream */
+    #messagesWrap {
+      flex: 1 1 auto; overflow-y: auto; padding: 12px 10px 18px;
+      display: flex; flex-direction: column; gap: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .empty-state {
+      margin: auto; text-align: center; color: var(--muted); max-width: 300px;
+      font-size: 13px; line-height: 1.9;
+    }
+
+    .msg-row { display: flex; flex-direction: column; max-width: 86%; }
+    .msg-row.mine { align-self: flex-start; }
+    .msg-row.other { align-self: flex-end; }
+    @media (min-width: 720px) { .msg-row { max-width: 68%; } }
+
+    .msg-bubble {
+      background: var(--msg-in); border: 1px solid var(--border);
+      border-radius: 16px; padding: 10px 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      position: relative;
+    }
+    .msg-row.mine .msg-bubble { background: var(--msg-out); border-top-right-radius: 4px; }
+    .msg-row.other .msg-bubble { border-top-left-radius: 4px; }
+    .msg-bubble.edu-bubble {
+      background: var(--msg-edu) !important;
+      border-right: 4px solid var(--success) !important;
+    }
+    .msg-bubble.pinned-bubble {
+      box-shadow: 0 0 0 1px var(--accent), 0 6px 18px rgba(0,0,0,0.22);
+    }
+
+    .msg-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      margin-bottom: 5px; font-size: 11.5px;
+    }
+    .msg-sender { font-weight: bold; color: var(--accent); display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+    .role-badge {
+      font-size: 10px; padding: 1px 7px; border-radius: 999px;
+      background: rgba(128,128,128,0.18); color: var(--text); font-weight: normal;
+    }
+    .admin-badge { background: var(--accent); color: var(--accent-contrast); font-weight: bold; }
+    .edu-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 10.5px; font-weight: bold; padding: 2px 8px; border-radius: 999px;
+      background: rgba(16,185,129,0.2); color: var(--success); border: 1px solid rgba(16,185,129,0.4);
+      margin-bottom: 6px;
+    }
+
+    .reply-quote {
+      background: rgba(0,0,0,0.2); border-right: 3px solid var(--accent);
+      border-radius: 8px; padding: 5px 8px; margin-bottom: 6px;
+      font-size: 11px; color: var(--muted); cursor: pointer;
+    }
+    .reply-quote b { color: var(--accent); display: block; margin-bottom: 2px; }
+
+    .msg-text {
+      font-size: 13.5px; line-height: 1.8; white-space: pre-wrap; word-break: break-word;
+    }
+    .msg-text a { color: #38bdf8; text-decoration: underline; word-break: break-all; }
+    html[data-v12-theme="pearl-light"] .msg-text a { color: #0369a1; }
+
+    /* Media & Attachments */
+    .att-img {
+      max-width: 100%; max-height: 300px; border-radius: 12px;
+      display: block; margin-top: 6px; cursor: zoom-in; object-fit: cover;
+      border: 1px solid var(--border);
+    }
+    .att-video {
+      width: 100%; max-height: 300px; border-radius: 12px;
+      margin-top: 6px; background: #000; border: 1px solid var(--border);
+    }
+    .att-audio { width: 100%; max-width: 300px; margin-top: 6px; height: 38px; }
+    .att-file {
+      display: flex; align-items: center; gap: 10px; margin-top: 6px;
+      padding: 9px 11px; border-radius: 12px;
+      background: rgba(0,0,0,0.22); border: 1px solid var(--border);
+      color: var(--text); text-decoration: none;
+    }
+    html[data-v12-theme="pearl-light"] .att-file { background: rgba(15,23,42,0.05); }
+    .att-file-icon { font-size: 24px; }
+    .att-file-info { min-width: 0; flex: 1; }
+    .att-file-name { font-size: 12.5px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .att-file-size { font-size: 10.5px; color: var(--muted); }
+
+    .link-card {
+      display: flex; align-items: center; gap: 8px; margin-top: 6px;
+      padding: 7px 10px; border-radius: 10px;
+      background: rgba(56,189,248,0.10); border: 1px solid rgba(56,189,248,0.3);
+      color: #38bdf8; text-decoration: none; font-size: 11.5px; word-break: break-all;
+    }
+    html[data-v12-theme="pearl-light"] .link-card { color: #0369a1; }
+
+    .msg-foot {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      margin-top: 7px; padding-top: 5px; border-top: 1px dashed rgba(128,128,128,0.2);
+      font-size: 10.5px; color: var(--muted); flex-wrap: wrap;
+    }
+    .msg-tools { display: flex; gap: 4px; flex-wrap: wrap; }
+    .mt-btn {
+      background: transparent; border: 1px solid transparent; color: var(--muted);
+      border-radius: 7px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-family: inherit;
+    }
+    .mt-btn:hover { border-color: var(--border); color: var(--text); }
+    .reactions-row { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+    .react-pill {
+      background: rgba(128,128,128,0.16); border: 1px solid var(--border);
+      border-radius: 999px; padding: 2px 7px; font-size: 11px;
+      color: var(--text); cursor: pointer; font-family: inherit;
+    }
+
+    #typingHint {
+      flex: 0 0 auto; min-height: 18px; padding: 0 14px 4px;
+      font-size: 11px; color: var(--accent);
+    }
+
+    /* ============== COMPOSER ============== */
+    .composer-wrap {
+      flex: 0 0 auto; background: var(--card); border-top: 1px solid var(--border);
+      padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    }
+    .composer-banner {
+      display: none; align-items: center; justify-content: space-between; gap: 8px;
+      background: var(--input-bg); border: 1px solid var(--border);
+      border-right: 3px solid var(--accent); border-radius: 10px;
+      padding: 6px 10px; margin-bottom: 7px; font-size: 11.5px;
+    }
+    .composer-banner.show { display: flex; }
+    .edu-options {
+      display: none; gap: 6px; flex-wrap: wrap; margin-bottom: 7px; align-items: center;
+    }
+    .edu-options.show { display: flex; }
+    .edu-tag-chip {
+      padding: 4px 9px; border-radius: 999px; font-size: 11px;
+      background: var(--input-bg); color: var(--muted); border: 1px solid var(--border);
+      cursor: pointer; font-family: inherit;
+    }
+    .edu-tag-chip.active {
+      background: var(--success); color: #04110f; border-color: var(--success); font-weight: bold;
+    }
+    .upload-progress {
+      display: none; height: 5px; border-radius: 4px; overflow: hidden;
+      background: rgba(128,128,128,0.2); margin-bottom: 6px;
+    }
+    .upload-progress.show { display: block; }
+    .upload-progress-bar { height: 100%; width: 0%; background: var(--accent); transition: width 0.2s; }
+
+    .composer-row { display: flex; align-items: flex-end; gap: 6px; }
+    .c-btn {
+      width: 40px; height: 40px; flex: 0 0 40px; border-radius: 12px;
+      background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
+      font-size: 17px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .c-btn.active { background: var(--success); color: #04110f; border-color: var(--success); }
+    .c-btn.recording { background: var(--danger); color: #fff; border-color: var(--danger); animation: pulseRec 1s infinite; }
+    @keyframes pulseRec { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+    .c-send {
+      width: 44px; height: 40px; flex: 0 0 44px; border-radius: 12px; border: none;
+      background: var(--accent); color: var(--accent-contrast);
+      font-size: 18px; font-weight: bold; cursor: pointer;
+    }
+    #msgInput {
+      flex: 1; min-height: 40px; max-height: 120px; resize: none;
+      padding: 9px 11px; border-radius: 12px;
+      background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
+      font-family: inherit; font-size: 14px; line-height: 1.5;
+    }
+    #msgInput:focus { outline: none; border-color: var(--accent); }
+
+    /* ============== DRAWERS & MODALS ============== */
+    .overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(5px); z-index: 100; display: none;
+      align-items: center; justify-content: center; padding: 14px;
+    }
+    .overlay.open { display: flex; }
+    .modal-box {
+      width: min(420px, 100%); max-height: 82vh; overflow-y: auto;
+      background: var(--card-solid); color: var(--text);
+      border: 1px solid var(--border); border-radius: 18px; padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .modal-head {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 12px;
+      font-weight: bold; font-size: 14px;
+    }
+    .member-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 10px; border-radius: 10px; background: var(--input-bg);
+      border: 1px solid var(--border); margin-bottom: 6px; font-size: 12.5px;
+    }
+    #lightboxImg { max-width: 95vw; max-height: 88vh; border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.65); }
+
+    #toast {
+      position: fixed; top: 70px; left: 50%; transform: translateX(-50%);
+      background: var(--card-solid); color: var(--text); border: 1px solid var(--accent);
+      padding: 8px 16px; border-radius: 999px; font-size: 12px; font-weight: bold;
+      z-index: 200; display: none; box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+  <div id="toast"></div>
+
+  <!-- ================= صفحه ورود و عضویت در بخش ================= -->
+  <div id="authScreen">
+    <div class="auth-card">
+      <div class="auth-head">
+        <div>
+          <h1>💬 چت‌روم تخصصی بخش‌های بیمارستان</h1>
+          <div class="auth-sub">ارتباط کاری هم‌زمان، تبادل فایل، عکس، فیلم، لینک و بانک آموزشی هر بخش</div>
+        </div>
+        <button type="button" class="icon-btn" onclick="openThemeModal()" title="انتخاب تم">🎨 تم</button>
+      </div>
+
+      <div id="authErr" class="auth-err"></div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="inpName">نام و نام خانوادگی:</label>
+          <input id="inpName" type="text" placeholder="مثلاً: سارا محمدی">
+        </div>
+        <div class="field">
+          <label for="inpRole">سمت سازمانی:</label>
+          <select id="inpRole">
+            <option value="پرستار">پرستار</option>
+            <option value="سرپرستار">سرپرستار</option>
+            <option value="کمک‌بهیار">کمک‌بهیار</option>
+            <option value="پزشک / رزیدنت">پزشک / رزیدنت</option>
+            <option value="کارشناس اتاق عمل / هوشبری">کارشناس اتاق عمل / هوشبری</option>
+            <option value="سوپروایزر">سوپروایزر</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>انتخاب بخش مورد نظر (با لمس انتخاب کنید):</label>
+        <div id="wardGrid" class="ward-grid"></div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="inpWardCode">کد عضویت بخش:</label>
+          <input id="inpWardCode" type="text" placeholder="مثلاً: CCU101" dir="ltr" style="text-align:center;">
+        </div>
+        <div class="field">
+          <label for="inpAdminCode">کد سرپرستار / مدیریت (اختیاری):</label>
+          <input id="inpAdminCode" type="password" placeholder="برای پین، حذف و پشتیبان‌گیری" dir="ltr" style="text-align:center;">
+        </div>
+      </div>
+
+      <button type="button" id="btnJoin" class="btn-main" onclick="handleJoin()">ورود به چت‌روم بخش</button>
+
+      <div class="auth-hint">
+        🔑 <b>کدهای پیش‌فرض برای تست اولیه:</b>
+        CCU: <code>CCU101</code> | Post-CCU: <code>POST102</code> | ICU قلب: <code>ICU103</code> | بستری قلب: <code>CARD104</code> | کت‌لب: <code>CATH105</code> | اورژانس: <code>ER107</code> | عمومی: <code>HOSP100</code><br>
+        🛡️ کد مدیریت پیش‌فرض: <code>HEAD999</code> (از تنظیمات Render قابل تغییر است).
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= محیط چت‌روم بخش ================= -->
+  <div id="chatApp">
+    <header class="chat-header">
+      <div class="ch-info">
+        <div class="ch-icon" id="hdrIcon">❤️</div>
+        <div class="ch-titles">
+          <h2 id="hdrWardName">بخش CCU</h2>
+          <div class="ch-status">
+            <span class="live-dot" id="liveDot"></span>
+            <span id="hdrOnlineText">در حال اتصال...</span>
+          </div>
+        </div>
+      </div>
+      <div class="ch-actions">
+        <button type="button" class="icon-btn" onclick="toggleSearch()" title="جستجو">🔍</button>
+        <button type="button" class="icon-btn" onclick="openMembersModal()" title="اعضای آنلاین و مدیریت">👥 <span id="onlineCountBadge">0</span></button>
+        <button type="button" class="icon-btn" onclick="openThemeModal()" title="تغییر تم">🎨</button>
+        <button type="button" class="icon-btn" onclick="switchWardScreen()" title="تغییر بخش">🚪 بخش‌ها</button>
+      </div>
+    </header>
+
+    <div class="toolbar-bar">
+      <div class="filter-chips" id="filterChips">
+        <button type="button" class="f-chip active" data-filter="all">همه پیام‌ها</button>
+        <button type="button" class="f-chip" data-filter="edu">📚 بانک آموزشی</button>
+        <button type="button" class="f-chip" data-filter="media">🎬 عکس و فیلم</button>
+        <button type="button" class="f-chip" data-filter="file">📄 فایل و PDF</button>
+        <button type="button" class="f-chip" data-filter="link">🔗 لینک‌ها</button>
+        <button type="button" class="f-chip" data-filter="pinned">📌 پین‌شده</button>
+      </div>
+      <div class="search-row" id="searchRow">
+        <input id="searchInput" type="text" placeholder="🔍 جستجو در متن، فرستنده، نام فایل یا موضوع آموزشی...">
+        <button type="button" class="icon-btn" onclick="clearSearch()">✕</button>
+      </div>
+    </div>
+
+    <div id="pinnedBar" onclick="jumpToPinned()">
+      <span>📌</span>
+      <span class="pin-snippet" id="pinnedSnippet"></span>
+      <span style="font-size:10.5px; color:var(--accent);">مشاهده</span>
+    </div>
+
+    <div class="privacy-strip">
+      ⚠️ جهت حفظ محرمانگی بالینی، از ارسال نام کامل، کدملی، شماره پرونده یا عکس چهره بیمار خودداری کنید.
+    </div>
+
+    <main id="messagesWrap"></main>
+    <div id="typingHint"></div>
+
+    <footer class="composer-wrap">
+      <div class="upload-progress" id="uploadProgress"><div class="upload-progress-bar" id="uploadProgressBar"></div></div>
+
+      <div class="composer-banner" id="replyBanner">
+        <div style="min-width:0;">
+          <b id="replyBannerName" style="color:var(--accent);"></b>
+          <div id="replyBannerText" style="color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></div>
+        </div>
+        <button type="button" class="icon-btn" onclick="cancelReply()">✕</button>
+      </div>
+
+      <div class="composer-banner" id="attBanner">
+        <div id="attBannerText" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></div>
+        <button type="button" class="icon-btn" onclick="clearPendingAttachment()">✕ حذف</button>
+      </div>
+
+      <div class="edu-options" id="eduOptions">
+        <span style="font-size:11px; color:var(--success); font-weight:bold;">📚 برچسب آموزشی:</span>
+        <button type="button" class="edu-tag-chip active" data-tag="آموزش بالینی">آموزش بالینی</button>
+        <button type="button" class="edu-tag-chip" data-tag="داروشناسی">داروشناسی</button>
+        <button type="button" class="edu-tag-chip" data-tag="ECG و ریتم">ECG و ریتم</button>
+        <button type="button" class="edu-tag-chip" data-tag="تجهیزات و دستگاه">تجهیزات و دستگاه</button>
+        <button type="button" class="edu-tag-chip" data-tag="پروتکل و بخشنامه">پروتکل و بخشنامه</button>
+      </div>
+
+      <div class="composer-row">
+        <button type="button" class="c-btn" id="btnEduToggle" onclick="toggleEduMode()" title="ارسال به‌عنوان مطلب آموزشی">📚</button>
+        <button type="button" class="c-btn" onclick="document.getElementById('fileInput').click()" title="ارسال عکس، فیلم یا فایل PDF">📎</button>
+        <button type="button" class="c-btn" id="btnVoice" onclick="toggleVoiceRecord()" title="ضبط پیام صوتی">🎙️</button>
+        <input type="file" id="fileInput" style="display:none;" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip">
+        <textarea id="msgInput" rows="1" placeholder="پیام کاری، لینک یا نکته آموزشی بنویسید..."></textarea>
+        <button type="button" class="c-send" id="btnSend" onclick="sendMessage()" title="ارسال">➤</button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================= مودال اعضای آنلاین و ابزار سرپرستار ================= -->
+  <div class="overlay" id="membersModal" onclick="if(event.target===this)closeModal('membersModal')">
+    <div class="modal-box">
+      <div class="modal-head">
+        <span>👥 پرسنل آنلاین در این بخش</span>
+        <button type="button" class="icon-btn" onclick="closeModal('membersModal')">✕</button>
+      </div>
+      <div id="membersList"></div>
+      <div id="adminToolsBox" style="display:none; margin-top:14px; padding-top:12px; border-top:1px dashed var(--border);">
+        <div style="font-size:12.5px; font-weight:bold; color:var(--accent); margin-bottom:8px;">🛡️ ابزار مدیریت سرپرستار</div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <button type="button" class="icon-btn" style="flex:1;" onclick="downloadBackup()">⬇️ دانلود پشتیبان پیام‌ها</button>
+          <button type="button" class="icon-btn" style="flex:1;" onclick="document.getElementById('restoreInput').click()">⬆️ بازگردانی پشتیبان</button>
+          <input type="file" id="restoreInput" accept=".json" style="display:none;" onchange="restoreBackup(this)">
+        </div>
+        <p style="font-size:10.5px; color:var(--muted); margin:8px 0 0; line-height:1.6;">
+          در پلن رایگان Render، با ری‌استارت سرور فایل‌های داخلی ممکن است پاک شوند؛ پیشنهاد می‌شود در پایان هفته یک پشتیبان JSON بگیرید.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= مودال انتخاب تم ================= -->
+  <div class="overlay" id="themeModal" onclick="if(event.target===this)closeModal('themeModal')">
+    <div class="modal-box">
+      <div class="modal-head">
+        <span>🎨 انتخاب تم شیشه‌ای چت‌روم</span>
+        <button type="button" class="icon-btn" onclick="closeModal('themeModal')">✕</button>
+      </div>
+      <div id="themeList" style="display:flex; flex-direction:column; gap:8px;"></div>
+    </div>
+  </div>
+
+  <!-- ================= پیش‌نمایش تمام‌صفحه عکس ================= -->
+  <div class="overlay" id="lightboxModal" onclick="closeModal('lightboxModal')">
+    <img id="lightboxImg" src="" alt="پیش‌نمایش تصویر">
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+  (function() {
+    'use strict';
+
+    const SESSION_KEY = 'HOSP_WARD_CHAT_SESSION_V1';
+    const THEME_KEY = 'CARDIAC_APP_THEME_V12';
+
+    const THEMES = [
+      { id: 'obsidian-gold', name: 'رویال ابسیدین و طلایی', swatch: 'linear-gradient(135deg,#0b0f19 40%,#d4af37 100%)' },
+      { id: 'emerald-crystal', name: 'کریستال زمردی', swatch: 'linear-gradient(135deg,#051311 40%,#10b981 100%)' },
+      { id: 'sapphire-clinical', name: 'یاقوتی بالینی', swatch: 'linear-gradient(135deg,#071120 40%,#38bdf8 100%)' },
+      { id: 'pearl-light', name: 'مروارید روشن (شیفت روز)', swatch: 'linear-gradient(135deg,#f8fafc 45%,#0f766e 100%)' },
+      { id: 'classic-dark', name: 'کلاسیک تیره (سبک)', swatch: 'linear-gradient(135deg,#121212 45%,#27ae60 100%)' }
+    ];
+
+    const state = {
+      wards: [],
+      selectedWardId: 'ccu',
+      session: null, // { user, ward, wardCode, adminCode }
+      messages: [],
+      online: [],
+      filter: 'all',
+      search: '',
+      isEduMode: false,
+      eduTag: 'آموزش بالینی',
+      replyTo: null,
+      pendingAttachment: null,
+      typingTimer: null,
+      mediaRecorder: null,
+      audioChunks: [],
+      socket: null
+    };
+
+    function $(id) { return document.getElementById(id); }
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+    function toast(msg) {
+      const t = $('toast');
+      t.textContent = msg;
+      t.style.display = 'block';
+      clearTimeout(toast._t);
+      toast._t = setTimeout(() => { t.style.display = 'none'; }, 3200);
+    }
+    function fmtBytes(b) {
+      if (!b) return '';
+      if (b < 1024) return b + ' B';
+      if (b < 1048576) return (b / 1024).toFixed(1) + ' KB';
+      return (b / 1048576).toFixed(1) + ' MB';
+    }
+    function fmtTime(iso) {
+      try {
+        return new Date(iso).toLocaleString('fa-IR', { hour: '2-digit', minute: '2-digit', month: 'short', day: 'numeric' });
+      } catch (e) { return ''; }
+    }
+    function linkifyText(raw) {
+      const safe = esc(raw);
+      return safe.replace(/(https?:\/\/[^\s<]+)/gi, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+    }
+
+    // ==========================================
+    // تم‌ها و هماهنگی با اپلیکیشن اصلی قلب
+    // ==========================================
+    window.applyTheme = function(id) {
+      const valid = THEMES.some(t => t.id === id) ? id : 'obsidian-gold';
+      document.documentElement.setAttribute('data-v12-theme', valid);
+      try { localStorage.setItem(THEME_KEY, valid); } catch (e) {}
+      renderThemeModal();
+    };
+
+    function renderThemeModal() {
+      const cur = document.documentElement.getAttribute('data-v12-theme') || 'obsidian-gold';
+      const box = $('themeList');
+      if (!box) return;
+      box.innerHTML = THEMES.map(t =>
+        `<button type="button" class="member-item" style="cursor:pointer;border:${t.id===cur?'2px solid var(--accent)':'1px solid var(--border)'};" onclick="applyTheme('${t.id}');closeModal('themeModal');">
+          <span style="display:flex;align-items:center;gap:10px;">
+            <span style="width:24px;height:24px;border-radius:8px;background:${t.swatch};display:inline-block;"></span>
+            <b>${t.name}</b>
+          </span>
+          <span>${t.id===cur ? '✓' : ''}</span>
+        </button>`
+      ).join('');
+    }
+
+    window.openThemeModal = function() { renderThemeModal(); $('themeModal').classList.add('open'); };
+    window.openMembersModal = function() {
+      const box = $('membersList');
+      if (!state.online.length) {
+        box.innerHTML = '<div style="font-size:12px;color:var(--muted);text-align:center;">عضو آنلاینی ثبت نشده است.</div>';
+      } else {
+        box.innerHTML = state.online.map(u =>
+          `<div class="member-item">
+            <span><span class="live-dot" style="margin-left:6px;"></span><b>${esc(u.name)}</b></span>
+            <span class="role-badge ${u.isAdmin ? 'admin-badge' : ''}">${esc(u.role)}${u.isAdmin ? ' ★' : ''}</span>
+          </div>`
+        ).join('');
+      }
+      $('adminToolsBox').style.display = (state.session && state.session.user && state.session.user.isAdmin) ? 'block' : 'none';
+      $('membersModal').classList.add('open');
+    };
+    window.closeModal = function(id) { $(id).classList.remove('open'); };
+
+    // هماهنگی با تم اپ پرستاری در حالت iframe
+    window.addEventListener('message', (ev) => {
+      const msg = ev.data;
+      if (msg && msg.type === 'CARDIAC_SYNC_THEME' && msg.v12Theme) {
+        window.applyTheme(msg.v12Theme);
+      }
+    });
+
+    // ==========================================
+    // بارگذاری لیست بخش‌ها و احراز هویت
+    // ==========================================
+    async function loadWards() {
+      try {
+        const res = await fetch('/api/wards');
+        const data = await res.json();
+        if (data.ok && Array.isArray(data.wards)) {
+          state.wards = data.wards;
+          renderWardGrid();
+        }
+      } catch (e) {
+        $('authErr').textContent = 'خطا در ارتباط با سرور. لطفاً چند ثانیه بعد صفحه را رفرش کنید.';
+        $('authErr').style.display = 'block';
+      }
+    }
+
+    function renderWardGrid() {
+      const grid = $('wardGrid');
+      grid.innerHTML = state.wards.map(w =>
+        `<button type="button" class="ward-tile ${w.id === state.selectedWardId ? 'selected' : ''}" onclick="selectWard('${w.id}')">
+          <div class="wt-top"><span>${w.icon} ${esc(w.name)}</span></div>
+          <div class="wt-desc">${esc(w.desc)}</div>
+          <div class="wt-meta">💬 ${w.msgCount} پیام | 📚 ${w.eduCount} آموزشی</div>
+        </button>`
+      ).join('');
+    }
+
+    window.selectWard = function(id) {
+      state.selectedWardId = id;
+      renderWardGrid();
+    };
+
+    window.handleJoin = async function() {
+      const errBox = $('authErr');
+      errBox.style.display = 'none';
+      const payload = {
+        name: $('inpName').value.trim(),
+        role: $('inpRole').value,
+        wardId: state.selectedWardId,
+        wardCode: $('inpWardCode').value.trim(),
+        adminCode: $('inpAdminCode').value.trim()
+      };
+      $('btnJoin').disabled = true;
+      try {
+        const res = await fetch('/api/auth/join', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (!data.ok) {
+          errBox.textContent = data.error || 'ورود ناموفق بود.';
+          errBox.style.display = 'block';
+          return;
+        }
+        state.session = {
+          user: data.user,
+          ward: data.ward,
+          wardCode: payload.wardCode,
+          adminCode: payload.adminCode
+        };
+        try { localStorage.setItem(SESSION_KEY, JSON.stringify(state.session)); } catch (e) {}
+        enterChatRoom();
+      } catch (e) {
+        errBox.textContent = 'خطا در اتصال به سرور.';
+        errBox.style.display = 'block';
+      } finally {
+        $('btnJoin').disabled = false;
+      }
+    };
+
+    window.switchWardScreen = function() {
+      if (state.session) {
+        $('inpName').value = state.session.user.name || '';
+        $('inpRole').value = state.session.user.role || 'پرستار';
+        $('inpWardCode').value = '';
+        $('inpAdminCode').value = state.session.adminCode || '';
+        state.selectedWardId = state.session.ward.id;
+      }
+      $('chatApp').classList.remove('active');
+      $('authScreen').style.display = 'flex';
+      loadWards();
+    };
+
+    // ==========================================
+    // اتصال Socket.IO و مدیریت رویدادها
+    // ==========================================
+    function enterChatRoom() {
+      const s = state.session;
+      if (!s) return;
+      $('authScreen').style.display = 'none';
+      $('chatApp').classList.add('active');
+      $('hdrIcon').textContent = s.ward.icon || '💬';
+      $('hdrWardName').textContent = s.ward.name;
+      connectSocket();
+    }
+
+    function connectSocket() {
+      if (!state.socket) {
+        state.socket = io({ transports: ['websocket', 'polling'] });
+
+        state.socket.on('connect', () => {
+          $('liveDot').classList.remove('off');
+          joinSocketWard();
+        });
+
+        state.socket.on('disconnect', () => {
+          $('liveDot').classList.add('off');
+          $('hdrOnlineText').textContent = 'در حال اتصال مجدد...';
+        });
+
+        state.socket.on('ward:history', (msgs) => {
+          state.messages = Array.isArray(msgs) ? msgs : [];
+          renderMessages(true);
+        });
+
+        state.socket.on('ward:online', (list) => {
+          state.online = Array.isArray(list) ? list : [];
+          $('onlineCountBadge').textContent = state.online.length;
+          $('hdrOnlineText').textContent = `${state.online.length} نفر آنلاین در بخش`;
+        });
+
+        state.socket.on('msg:new', (msg) => {
+          state.messages.push(msg);
+          renderMessages(true);
+        });
+
+        state.socket.on('msg:updated', (updated) => {
+          const idx = state.messages.findIndex(m => m.id === updated.id);
+          if (idx !== -1) state.messages[idx] = updated;
+          renderMessages(false);
+        });
+
+        state.socket.on('msg:deleted', ({ msgId }) => {
+          state.messages = state.messages.filter(m => m.id !== msgId);
+          renderMessages(false);
+        });
+
+        state.socket.on('ward:typing', ({ name, isTyping }) => {
+          $('typingHint').textContent = isTyping ? `✍️ ${name} در حال نوشتن است...` : '';
+        });
+      } else {
+        joinSocketWard();
+      }
+    }
+
+    function joinSocketWard() {
+      const s = state.session;
+      if (!s || !state.socket) return;
+      state.socket.emit('ward:join', {
+        wardId: s.ward.id,
+        wardCode: s.wardCode,
+        adminCode: s.adminCode,
+        user: s.user
+      }, (resp) => {
+        if (!resp || !resp.ok) {
+          toast(resp && resp.error ? resp.error : 'احراز هویت بخش منقضی شد');
+          window.switchWardScreen();
+        }
+      });
+    }
+
+    // ==========================================
+    // رندر پیام‌ها، فیلتر و جستجو
+    // ==========================================
+    function getFilteredMessages() {
+      const q = state.search.trim().toLowerCase();
+      return state.messages.filter(m => {
+        if (state.filter === 'edu' && !m.isEducational) return false;
+        if (state.filter === 'media' && (!m.attachment || !['image', 'video'].includes(m.attachment.kind))) return false;
+        if (state.filter === 'file' && (!m.attachment || !['file', 'audio'].includes(m.attachment.kind))) return false;
+        if (state.filter === 'link' && (!m.links || m.links.length === 0)) return false;
+        if (state.filter === 'pinned' && !m.pinned) return false;
+        if (q) {
+          const hay = [m.text, m.senderName, m.senderRole, m.eduTag, m.attachment && m.attachment.name].join(' ').toLowerCase();
+          if (hay.indexOf(q) === -1) return false;
+        }
+        return true;
+      });
+    }
+
+    function updatePinnedBanner() {
+      const pinned = [...state.messages].reverse().find(m => m.pinned);
+      const bar = $('pinnedBar');
+      if (pinned) {
+        const txt = pinned.text || (pinned.attachment ? `فایل: ${pinned.attachment.name}` : 'پیام پین‌شده');
+        $('pinnedSnippet').textContent = `${pinned.senderName}: ${txt}`;
+        bar.dataset.msgId = pinned.id;
+        bar.classList.add('show');
+      } else {
+        bar.classList.remove('show');
+      }
+    }
+
+    window.jumpToPinned = function() {
+      const id = $('pinnedBar').dataset.msgId;
+      if (!id) return;
+      const el = document.getElementById('msg_' + id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    function renderAttachment(att) {
+      if (!att || !att.url) return '';
+      const safeUrl = esc(att.url);
+      const safeName = esc(att.name || 'فایل');
+      if (att.kind === 'image') {
+        return `<img class="att-img" src="${safeUrl}" alt="${safeName}" loading="lazy" onclick="openLightbox('${safeUrl}')">`;
+      }
+      if (att.kind === 'video') {
+        return `<video class="att-video" controls preload="metadata" src="${safeUrl}"></video>`;
+      }
+      if (att.kind === 'audio') {
+        return `<audio class="att-audio" controls preload="metadata" src="${safeUrl}"></audio>`;
+      }
+      const ext = (att.name || '').split('.').pop().toLowerCase();
+      const icon = ext === 'pdf' ? '📕' : (['xls','xlsx','csv'].includes(ext) ? '📊' : (['doc','docx'].includes(ext) ? '📘' : '📄'));
+      return `<a class="att-file" href="${safeUrl}" target="_blank" download="${safeName}">
+        <span class="att-file-icon">${icon}</span>
+        <span class="att-file-info">
+          <div class="att-file-name">${safeName}</div>
+          <div class="att-file-size">${fmtBytes(att.size)} — برای دانلود لمس کنید</div>
+        </span>
+        <span>⬇️</span>
+      </a>`;
+    }
+
+    function renderMessages(scrollBottom) {
+      updatePinnedBanner();
+      const wrap = $('messagesWrap');
+      const list = getFilteredMessages();
+      const me = state.session && state.session.user;
+
+      if (!list.length) {
+        wrap.innerHTML = `<div class="empty-state">
+          <div style="font-size:34px;margin-bottom:6px;">${state.filter === 'edu' ? '📚' : '💬'}</div>
+          ${state.messages.length ? 'موردی با این فیلتر یا جستجو پیدا نشد.' : 'هنوز پیامی در این بخش ارسال نشده است.<br>اولین پیام کاری یا آموزشی را ارسال کنید!'}
+        </div>`;
+        return;
+      }
+
+      wrap.innerHTML = list.map(m => {
+        const isMine = me && m.senderId === me.id;
+        const canDel = me && (me.isAdmin || isMine);
+        const reactions = m.reactions || {};
+        const reactHtml = Object.keys(reactions).map(em =>
+          `<button type="button" class="react-pill" onclick="reactMsg('${m.id}','${em}')">${em} ${reactions[em].length}</button>`
+        ).join('');
+        const linksHtml = (m.links || []).map(l =>
+          `<a class="link-card" href="${esc(l)}" target="_blank" rel="noopener noreferrer">🔗 <span>${esc(l)}</span></a>`
+        ).join('');
+
+        return `<div class="msg-row ${isMine ? 'mine' : 'other'}" id="msg_${esc(m.id)}">
+          <div class="msg-bubble ${m.isEducational ? 'edu-bubble' : ''} ${m.pinned ? 'pinned-bubble' : ''}">
+            <div class="msg-head">
+              <div class="msg-sender">
+                <span>${esc(m.senderName)}</span>
+                <span class="role-badge ${m.senderIsAdmin ? 'admin-badge' : ''}">${esc(m.senderRole)}</span>
+              </div>
+              <span>${m.pinned ? '📌' : ''}</span>
+            </div>
+            ${m.isEducational ? `<div class="edu-badge">📚 ${esc(m.eduTag || 'آموزش بالینی')}</div>` : ''}
+            ${m.replyTo ? `<div class="reply-quote" onclick="scrollToMsg('${esc(m.replyTo.id)}')"><b>پاسخ به ${esc(m.replyTo.senderName)}</b>${esc(m.replyTo.snippet)}</div>` : ''}
+            ${m.text ? `<div class="msg-text">${linkifyText(m.text)}</div>` : ''}
+            ${renderAttachment(m.attachment)}
+            ${linksHtml}
+            ${reactHtml ? `<div class="reactions-row">${reactHtml}</div>` : ''}
+            <div class="msg-foot">
+              <span>${fmtTime(m.createdAt)}</span>
+              <div class="msg-tools">
+                <button type="button" class="mt-btn" onclick="reactMsg('${m.id}','👍')" title="تایید">👍</button>
+                <button type="button" class="mt-btn" onclick="reactMsg('${m.id}','💡')" title="مفید بود">💡</button>
+                <button type="button" class="mt-btn" onclick="startReply('${m.id}')" title="پاسخ">↩️ پاسخ</button>
+                ${me && me.isAdmin ? `<button type="button" class="mt-btn" onclick="pinMsg('${m.id}')" title="پین">${m.pinned ? 'لغو پین' : '📌 پین'}</button>` : ''}
+                ${canDel ? `<button type="button" class="mt-btn" style="color:var(--danger);" onclick="deleteMsg('${m.id}')" title="حذف">🗑</button>` : ''}
+              </div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+
+      if (scrollBottom) {
+        wrap.scrollTop = wrap.scrollHeight;
+      }
+    }
+
+    window.scrollToMsg = function(id) {
+      const el = document.getElementById('msg_' + id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+    window.openLightbox = function(url) {
+      $('lightboxImg').src = url;
+      $('lightboxModal').classList.add('open');
+    };
+    window.reactMsg = function(msgId, emoji) {
+      state.socket && state.socket.emit('msg:react', { msgId, emoji });
+    };
+    window.pinMsg = function(msgId) {
+      state.socket && state.socket.emit('msg:pin', { msgId });
+    };
+    window.deleteMsg = function(msgId) {
+      if (!confirm('این پیام حذف شود؟')) return;
+      state.socket && state.socket.emit('msg:delete', { msgId });
+    };
+
+    window.startReply = function(msgId) {
+      const m = state.messages.find(x => x.id === msgId);
+      if (!m) return;
+      const snippet = m.text ? m.text.slice(0, 80) : (m.attachment ? `📎 ${m.attachment.name}` : 'پیام');
+      state.replyTo = { id: m.id, senderName: m.senderName, snippet };
+      $('replyBannerName').textContent = `پاسخ به ${m.senderName}`;
+      $('replyBannerText').textContent = snippet;
+      $('replyBanner').classList.add('show');
+      $('msgInput').focus();
+    };
+    window.cancelReply = function() {
+      state.replyTo = null;
+      $('replyBanner').classList.remove('show');
+    };
+
+    // ==========================================
+    // حالت آموزشی، آپلود فایل (با فشرده‌سازی عکس) و ضبط ویس
+    // ==========================================
+    window.toggleEduMode = function() {
+      state.isEduMode = !state.isEduMode;
+      $('btnEduToggle').classList.toggle('active', state.isEduMode);
+      $('eduOptions').classList.toggle('show', state.isEduMode);
+      if (state.isEduMode) toast('📚 حالت ارسال «مطلب آموزشی» فعال شد');
+    };
+
+    window.clearPendingAttachment = function() {
+      state.pendingAttachment = null;
+      $('attBanner').classList.remove('show');
+      $('fileInput').value = '';
+    };
+
+    async function compressImageIfNeeded(file) {
+      if (!file || !/^image\/(jpeg|png|webp)$/.test(file.type) || file.size < 900 * 1024) {
+        return file;
+      }
+      return new Promise((resolve) => {
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = () => {
+          URL.revokeObjectURL(url);
+          const maxDim = 1600;
+          let { width, height } = img;
+          if (width > maxDim || height > maxDim) {
+            const ratio = Math.min(maxDim / width, maxDim / height);
+            width = Math.round(width * ratio);
+            height = Math.round(height * ratio);
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width; canvas.height = height;
+          canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+          canvas.toBlob((blob) => {
+            if (!blob || blob.size >= file.size) return resolve(file);
+            resolve(new File([blob], file.name.replace(/\.\w+$/, '.jpg'), { type: 'image/jpeg' }));
+          }, 'image/jpeg', 0.82);
+        };
+        img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
+        img.src = url;
+      });
+    }
+
+    async function uploadFile(file) {
+      if (!file) return;
+      if (file.size > 30 * 1024 * 1024) {
+        toast('❌ حداکثر حجم مجاز فایل ۳۰ مگابایت است');
+        return;
+      }
+      const processed = await compressImageIfNeeded(file);
+      const fd = new FormData();
+      fd.append('file', processed);
+
+      const progWrap = $('uploadProgress');
+      const progBar = $('uploadProgressBar');
+      progWrap.classList.add('show');
+      progBar.style.width = '15%';
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/api/upload');
+      xhr.upload.onprogress = (e) => {
+        if (e.lengthComputable) {
+          progBar.style.width = Math.round((e.loaded / e.total) * 95) + '%';
+        }
+      };
+      xhr.onload = () => {
+        progWrap.classList.remove('show');
+        progBar.style.width = '0%';
+        try {
+          const data = JSON.parse(xhr.responseText);
+          if (!data.ok) {
+            toast('❌ ' + (data.error || 'خطا در آپلود'));
+            return;
+          }
+          state.pendingAttachment = data.file;
+          $('attBannerText').textContent = `📎 آماده ارسال: ${data.file.name} (${fmtBytes(data.file.size)})`;
+          $('attBanner').classList.add('show');
+          toast('✓ فایل آپلود شد — دکمه ارسال را بزنید');
+        } catch (e) {
+          toast('❌ خطا در پاسخ سرور هنگام آپلود');
+        }
+      };
+      xhr.onerror = () => {
+        progWrap.classList.remove('show');
+        toast('❌ اتصال هنگام آپلود قطع شد');
+      };
+      xhr.send(fd);
+    }
+
+    window.toggleVoiceRecord = async function() {
+      const btn = $('btnVoice');
+      if (state.mediaRecorder && state.mediaRecorder.state === 'recording') {
+        state.mediaRecorder.stop();
+        btn.classList.remove('recording');
+        btn.textContent = '🎙️';
+        return;
+      }
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        toast('❌ مرورگر شما از ضبط صوت پشتیبانی نمی‌کند');
+        return;
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        state.audioChunks = [];
+        const rec = new MediaRecorder(stream);
+        rec.ondataavailable = (e) => { if (e.data.size > 0) state.audioChunks.push(e.data); };
+        rec.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          const blob = new Blob(state.audioChunks, { type: rec.mimeType || 'audio/webm' });
+          const voiceFile = new File([blob], `voice_${Date.now()}.webm`, { type: blob.type });
+          uploadFile(voiceFile);
+        };
+        rec.start();
+        state.mediaRecorder = rec;
+        btn.classList.add('recording');
+        btn.textContent = '⏹️';
+        toast('🎙️ در حال ضبط ویس... برای توقف دوباره لمس کنید');
+      } catch (e) {
+        toast('❌ دسترسی میکروفون داده نشد');
+      }
+    };
+
+    window.sendMessage = function() {
+      const input = $('msgInput');
+      const text = input.value.trim();
+      if (!text && !state.pendingAttachment) return;
+      if (!state.socket || !state.socket.connected) {
+        toast('⚠️ اتصال به سرور برقرار نیست');
+        return;
+      }
+      state.socket.emit('msg:send', {
+        text,
+        attachment: state.pendingAttachment,
+        isEducational: state.isEduMode,
+        eduTag: state.eduTag,
+        replyTo: state.replyTo
+      }, (resp) => {
+        if (resp && resp.ok) {
+          input.value = '';
+          input.style.height = '40px';
+          window.clearPendingAttachment();
+          window.cancelReply();
+          state.socket.emit('typing', { isTyping: false });
+        } else {
+          toast('❌ ' + (resp && resp.error ? resp.error : 'ارسال پیام ناموفق بود'));
+        }
+      });
+    };
+
+    // ==========================================
+    // فیلتر، جستجو و پشتیبان‌گیری ادمین
+    // ==========================================
+    window.toggleSearch = function() {
+      const row = $('searchRow');
+      const open = row.classList.toggle('open');
+      if (open) $('searchInput').focus();
+      else window.clearSearch();
+    };
+    window.clearSearch = function() {
+      $('searchInput').value = '';
+      state.search = '';
+      $('searchRow').classList.remove('open');
+      renderMessages(false);
+    };
+
+    window.downloadBackup = function() {
+      if (!state.session || !state.session.adminCode) return;
+      window.open('/api/backup?adminCode=' + encodeURIComponent(state.session.adminCode), '_blank');
+    };
+    window.restoreBackup = function(input) {
+      const file = input.files && input.files[0];
+      if (!file || !state.session || !state.session.adminCode) return;
+      const r = new FileReader();
+      r.onload = async () => {
+        try {
+          const parsed = JSON.parse(r.result);
+          const res = await fetch('/api/restore', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ adminCode: state.session.adminCode, messages: parsed.messages || parsed })
+          });
+          const data = await res.json();
+          toast(data.ok ? '✓ ' + data.message : '❌ ' + data.error);
+        } catch (e) {
+          toast('❌ فایل پشتیبان نامعتبر است');
+        }
+        input.value = '';
+      };
+      r.readAsText(file);
+    };
+
+    // ==========================================
+    // راه‌اندازی اولیه
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      // بارگذاری تم از URL یا LocalStorage
+      const params = new URLSearchParams(window.location.search);
+      const urlTheme = params.get('theme');
+      const savedTheme = urlTheme || (() => { try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; } })();
+      window.applyTheme(savedTheme || 'obsidian-gold');
+
+      // فیلترها
+      document.querySelectorAll('#filterChips .f-chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.filter = btn.dataset.filter;
+          document.querySelectorAll('#filterChips .f-chip').forEach(b => b.classList.toggle('active', b === btn));
+          renderMessages(true);
+        });
+      });
+
+      // تگ‌های آموزشی
+      document.querySelectorAll('#eduOptions .edu-tag-chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.eduTag = btn.dataset.tag;
+          document.querySelectorAll('#eduOptions .edu-tag-chip').forEach(b => b.classList.toggle('active', b === btn));
+        });
+      });
+
+      // جستجو
+      $('searchInput').addEventListener('input', (e) => {
+        state.search = e.target.value;
+        renderMessages(false);
+      });
+
+      // انتخاب فایل
+      $('fileInput').addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) uploadFile(e.target.files[0]);
+      });
+
+      // تایپ و ارسال با Enter
+      const msgInput = $('msgInput');
+      msgInput.addEventListener('input', () => {
+        msgInput.style.height = '40px';
+        msgInput.style.height = Math.min(msgInput.scrollHeight, 120) + 'px';
+        if (state.socket && state.socket.connected) {
+          state.socket.emit('typing', { isTyping: true });
+          clearTimeout(state.typingTimer);
+          state.typingTimer = setTimeout(() => state.socket.emit('typing', { isTyping: false }), 1800);
+        }
+      });
+      msgInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          window.sendMessage();
+        }
+      });
+
+      // بررسی نشست ذخیره‌شده
+      try {
+        const raw = localStorage.getItem(SESSION_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.user && parsed.ward) {
+            state.session = parsed;
+            enterChatRoom();
+            return;
+          }
+        }
+      } catch (e) {}
+
+      loadWards();
+    });
+  })();
+  </script>
+</body>
+</html>
