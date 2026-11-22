@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>چت‌روم تخصصی و بانک آموزشی بخش‌های بیمارستان</title>
+  <title>چت‌روم تخصصی و پنل مدیریت سرپرستار بخش‌های بیمارستان</title>
   <style>
     :root,
     html[data-v12-theme="obsidian-gold"] {
       --bg-grad: radial-gradient(circle at 12% 10%, rgba(212,175,55,0.16), transparent 45%),
                  radial-gradient(circle at 88% 85%, rgba(56,189,248,0.11), transparent 48%),
                  linear-gradient(160deg, #070a11 0%, #0f1626 55%, #090d16 100%);
-      --card: rgba(18, 25, 40, 0.78);
+      --card: rgba(18, 25, 40, 0.80);
       --card-solid: #131a29;
-      --msg-in: rgba(25, 35, 56, 0.85);
+      --msg-in: rgba(25, 35, 56, 0.86);
       --msg-out: linear-gradient(135deg, rgba(212,175,55,0.24), rgba(180,138,24,0.16));
       --msg-edu: linear-gradient(135deg, rgba(16,185,129,0.20), rgba(14,165,233,0.14));
+      --msg-ann: linear-gradient(135deg, rgba(212,175,55,0.26), rgba(239,68,68,0.18));
       --text: #f1f5f9;
       --muted: #94a3b8;
       --border: rgba(212, 175, 55, 0.28);
-      --input-bg: rgba(9, 14, 24, 0.84);
+      --input-bg: rgba(9, 14, 24, 0.86);
       --accent: #d4af37;
       --accent-contrast: #0b0f19;
       --danger: #ef4444;
+      --warn: #f59e0b;
       --success: #10b981;
       --shadow: 0 12px 32px rgba(0, 0, 0, 0.48);
     }
@@ -30,18 +32,20 @@
       --bg-grad: radial-gradient(circle at 15% 12%, rgba(16,185,129,0.22), transparent 46%),
                  radial-gradient(circle at 85% 84%, rgba(20,184,166,0.18), transparent 50%),
                  linear-gradient(160deg, #04110f 0%, #0a2420 55%, #061715 100%);
-      --card: rgba(10, 34, 30, 0.78);
+      --card: rgba(10, 34, 30, 0.80);
       --card-solid: #0a231f;
       --msg-in: rgba(13, 46, 40, 0.86);
       --msg-out: linear-gradient(135deg, rgba(16,185,129,0.28), rgba(20,184,166,0.18));
       --msg-edu: linear-gradient(135deg, rgba(212,175,55,0.22), rgba(16,185,129,0.15));
+      --msg-ann: linear-gradient(135deg, rgba(212,175,55,0.26), rgba(239,68,68,0.18));
       --text: #ecfdf5;
       --muted: #86b8ab;
       --border: rgba(52, 211, 153, 0.30);
-      --input-bg: rgba(5, 22, 19, 0.84);
+      --input-bg: rgba(5, 22, 19, 0.86);
       --accent: #10b981;
       --accent-contrast: #04110f;
       --danger: #f87171;
+      --warn: #fbbf24;
       --success: #34d399;
       --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     }
@@ -50,18 +54,20 @@
       --bg-grad: radial-gradient(circle at 15% 15%, rgba(56,189,248,0.20), transparent 46%),
                  radial-gradient(circle at 85% 80%, rgba(99,102,241,0.18), transparent 50%),
                  linear-gradient(160deg, #060e1c 0%, #0d1d38 55%, #081226 100%);
-      --card: rgba(15, 29, 54, 0.78);
+      --card: rgba(15, 29, 54, 0.80);
       --card-solid: #0f1d36;
       --msg-in: rgba(20, 39, 72, 0.86);
       --msg-out: linear-gradient(135deg, rgba(56,189,248,0.26), rgba(99,102,241,0.18));
       --msg-edu: linear-gradient(135deg, rgba(16,185,129,0.22), rgba(56,189,248,0.14));
+      --msg-ann: linear-gradient(135deg, rgba(212,175,55,0.26), rgba(239,68,68,0.18));
       --text: #f0f9ff;
       --muted: #93b4d8;
       --border: rgba(56, 189, 248, 0.30);
-      --input-bg: rgba(7, 16, 33, 0.84);
+      --input-bg: rgba(7, 16, 33, 0.86);
       --accent: #38bdf8;
       --accent-contrast: #06101f;
       --danger: #f87171;
+      --warn: #fbbf24;
       --success: #34d399;
       --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     }
@@ -70,11 +76,12 @@
       --bg-grad: radial-gradient(circle at 15% 12%, rgba(212,175,55,0.14), transparent 45%),
                  radial-gradient(circle at 85% 85%, rgba(14,165,233,0.12), transparent 50%),
                  linear-gradient(160deg, #f8fafc 0%, #edf2f7 55%, #e2e8f0 100%);
-      --card: rgba(255, 255, 255, 0.86);
+      --card: rgba(255, 255, 255, 0.88);
       --card-solid: #ffffff;
       --msg-in: #ffffff;
       --msg-out: linear-gradient(135deg, rgba(15,118,110,0.14), rgba(14,165,233,0.10));
       --msg-edu: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(16,185,129,0.10));
+      --msg-ann: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(239,68,68,0.10));
       --text: #0f172a;
       --muted: #475569;
       --border: rgba(15, 23, 42, 0.14);
@@ -82,6 +89,7 @@
       --accent: #0f766e;
       --accent-contrast: #ffffff;
       --danger: #dc2626;
+      --warn: #d97706;
       --success: #059669;
       --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
@@ -93,6 +101,7 @@
       --msg-in: #262626;
       --msg-out: #1f3327;
       --msg-edu: #24303c;
+      --msg-ann: #38241d;
       --text: #e8e8e8;
       --muted: #9e9e9e;
       --border: #333333;
@@ -100,6 +109,7 @@
       --accent: #27ae60;
       --accent-contrast: #ffffff;
       --danger: #e74c3c;
+      --warn: #f39c12;
       --success: #2ecc71;
       --shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     }
@@ -115,31 +125,31 @@
     /* ============== LOGIN / WARD SELECTOR SCREEN ============== */
     #authScreen {
       position: fixed; inset: 0; z-index: 50;
-      overflow-y: auto; padding: 20px 14px 40px;
+      overflow-y: auto; padding: 18px 12px 40px;
       display: flex; align-items: flex-start; justify-content: center;
     }
     .auth-card {
       width: min(560px, 100%); margin: auto 0;
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 22px; padding: 20px;
+      border-radius: 22px; padding: 18px;
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       box-shadow: var(--shadow);
     }
     .auth-head {
       display: flex; justify-content: space-between; align-items: center; gap: 10px;
-      border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 16px;
+      border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 14px;
     }
-    .auth-head h1 { margin: 0; font-size: 17px; color: var(--accent); }
-    .auth-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .auth-head h1 { margin: 0; font-size: 16.5px; color: var(--accent); }
+    .auth-sub { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
 
-    .field { margin-bottom: 12px; }
+    .field { margin-bottom: 11px; }
     .field label { display: block; font-size: 12px; font-weight: bold; color: var(--muted); margin-bottom: 5px; }
-    .field input, .field select {
-      width: 100%; padding: 11px 12px; border-radius: 12px;
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 10px 12px; border-radius: 12px;
       background: var(--input-bg); color: var(--text);
-      border: 1px solid var(--border); font-family: inherit; font-size: 14px;
+      border: 1px solid var(--border); font-family: inherit; font-size: 13.5px;
     }
-    .field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
     .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     @media (max-width: 480px) { .row2 { grid-template-columns: 1fr; } }
 
@@ -158,17 +168,27 @@
       background: linear-gradient(135deg, rgba(212,175,55,0.16), transparent);
       box-shadow: 0 0 0 2px rgba(212,175,55,0.14);
     }
-    .ward-tile .wt-top { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: bold; }
+    .ward-tile .wt-top { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; font-weight: bold; gap: 4px; }
     .ward-tile .wt-desc { font-size: 10.5px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
     .ward-tile .wt-meta { font-size: 10px; color: var(--accent); margin-top: 5px; }
 
     .btn-main {
-      width: 100%; padding: 13px; border: none; border-radius: 14px;
+      width: 100%; padding: 12px; border: none; border-radius: 13px;
       background: var(--accent); color: var(--accent-contrast);
-      font-family: inherit; font-size: 15px; font-weight: bold;
+      font-family: inherit; font-size: 14.5px; font-weight: bold;
       cursor: pointer; margin-top: 6px; box-shadow: 0 6px 18px rgba(0,0,0,0.28);
     }
     .btn-main:disabled { opacity: 0.55; cursor: not-allowed; }
+    .btn-danger {
+      background: var(--danger); color: #fff; border: none; border-radius: 11px;
+      padding: 9px 12px; font-family: inherit; font-size: 12.5px; font-weight: bold; cursor: pointer;
+    }
+    .btn-soft {
+      background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
+      border-radius: 10px; padding: 8px 11px; font-family: inherit; font-size: 12px;
+      font-weight: bold; cursor: pointer;
+    }
+    .btn-soft:hover { border-color: var(--accent); color: var(--accent); }
     .auth-err {
       background: rgba(239,68,68,0.16); border: 1px solid rgba(239,68,68,0.45);
       color: #fca5a5; border-radius: 10px; padding: 9px 11px;
@@ -188,52 +208,78 @@
     }
     #chatApp.active { display: flex; }
 
-    /* Top Header */
     .chat-header {
       flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
-      gap: 8px; padding: 10px 12px;
+      gap: 8px; padding: 9px 11px;
       background: var(--card); border-bottom: 1px solid var(--border);
       backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
       z-index: 10;
     }
-    .ch-info { display: flex; align-items: center; gap: 9px; min-width: 0; }
+    .ch-info { display: flex; align-items: center; gap: 8px; min-width: 0; }
     .ch-icon {
-      width: 38px; height: 38px; border-radius: 12px; flex: 0 0 38px;
+      width: 36px; height: 36px; border-radius: 11px; flex: 0 0 36px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 20px; background: var(--input-bg); border: 1px solid var(--border);
+      font-size: 19px; background: var(--input-bg); border: 1px solid var(--border);
     }
     .ch-titles { min-width: 0; }
     .ch-titles h2 {
-      margin: 0; font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      margin: 0; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .ch-status {
-      font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 6px;
+      font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 5px;
     }
     .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); display: inline-block; box-shadow: 0 0 6px var(--success); }
-    .live-dot.off { background: #f59e0b; box-shadow: none; }
+    .live-dot.off { background: var(--warn); box-shadow: none; }
 
     .ch-actions { display: flex; align-items: center; gap: 5px; flex: 0 0 auto; }
     .icon-btn {
       background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
-      border-radius: 10px; padding: 6px 9px; font-size: 12px; font-family: inherit;
+      border-radius: 10px; padding: 6px 8px; font-size: 12px; font-family: inherit;
       cursor: pointer; display: inline-flex; align-items: center; gap: 4px;
     }
     .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* Filter & Search Bar */
+    /* ============== ADMIN TOP MODE TABS (ONLY FOR HEAD NURSE) ============== */
+    #adminModeTabs {
+      flex: 0 0 auto; display: none; grid-template-columns: 1fr 1fr; gap: 6px;
+      padding: 7px 10px; background: rgba(212,175,55,0.10);
+      border-bottom: 1px solid var(--border);
+    }
+    #adminModeTabs.show { display: grid; }
+    .mode-tab-btn {
+      padding: 8px 10px; border-radius: 11px; border: 1px solid var(--border);
+      background: var(--input-bg); color: var(--text); font-family: inherit;
+      font-size: 12.5px; font-weight: bold; cursor: pointer; transition: 0.15s;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .mode-tab-btn.active {
+      background: var(--accent); color: var(--accent-contrast); border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.22);
+    }
+    .tab-pill-badge {
+      background: rgba(0,0,0,0.28); color: #fff; border-radius: 999px;
+      padding: 1px 7px; font-size: 10px;
+    }
+
+    /* ============== CHAT VIEW ============== */
+    #chatView {
+      flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; overflow: hidden;
+    }
+    #chatView.hidden { display: none; }
+
     .toolbar-bar {
-      flex: 0 0 auto; padding: 8px 10px;
+      flex: 0 0 auto; padding: 7px 10px;
       background: rgba(0,0,0,0.14); border-bottom: 1px solid var(--border);
-      display: flex; flex-direction: column; gap: 7px;
+      display: flex; flex-direction: column; gap: 6px;
     }
     .filter-chips {
       display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;
     }
     .filter-chips::-webkit-scrollbar { display: none; }
     .f-chip {
-      flex: 0 0 auto; padding: 5px 11px; border-radius: 999px;
+      flex: 0 0 auto; padding: 5px 10px; border-radius: 999px;
       background: var(--card); color: var(--muted); border: 1px solid var(--border);
-      font-size: 11.5px; font-family: inherit; cursor: pointer; transition: 0.15s;
+      font-size: 11px; font-family: inherit; cursor: pointer; transition: 0.15s;
     }
     .f-chip.active {
       background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); font-weight: bold;
@@ -246,25 +292,31 @@
       font-family: inherit; font-size: 13px;
     }
 
-    /* Pinned Banner */
     #pinnedBar {
       flex: 0 0 auto; display: none; align-items: center; justify-content: space-between; gap: 8px;
-      padding: 7px 12px; background: rgba(212,175,55,0.14); border-bottom: 1px solid var(--border);
+      padding: 6px 12px; background: rgba(212,175,55,0.14); border-bottom: 1px solid var(--border);
       font-size: 12px; cursor: pointer;
     }
     #pinnedBar.show { display: flex; }
     .pin-snippet { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
 
-    /* Privacy Notice */
+    #roomNoticeBar {
+      flex: 0 0 auto; display: none; padding: 6px 12px; font-size: 11.5px; font-weight: bold;
+      text-align: center; background: rgba(245,158,11,0.18); color: var(--warn);
+      border-bottom: 1px solid rgba(245,158,11,0.35);
+    }
+    #roomNoticeBar.show { display: block; }
+    #roomNoticeBar.danger { background: rgba(239,68,68,0.18); color: #fca5a5; border-bottom-color: rgba(239,68,68,0.4); }
+    html[data-v12-theme="pearl-light"] #roomNoticeBar.danger { color: #b91c1c; }
+
     .privacy-strip {
       flex: 0 0 auto; padding: 4px 10px; text-align: center;
-      font-size: 10.5px; color: var(--muted);
-      background: rgba(239,68,68,0.08); border-bottom: 1px solid rgba(239,68,68,0.16);
+      font-size: 10px; color: var(--muted);
+      background: rgba(239,68,68,0.07); border-bottom: 1px solid rgba(239,68,68,0.14);
     }
 
-    /* Messages Stream */
     #messagesWrap {
-      flex: 1 1 auto; overflow-y: auto; padding: 12px 10px 18px;
+      flex: 1 1 auto; overflow-y: auto; padding: 12px 10px 16px;
       display: flex; flex-direction: column; gap: 10px;
       -webkit-overflow-scrolling: touch;
     }
@@ -273,10 +325,11 @@
       font-size: 13px; line-height: 1.9;
     }
 
-    .msg-row { display: flex; flex-direction: column; max-width: 86%; }
+    .msg-row { display: flex; flex-direction: column; max-width: 88%; }
     .msg-row.mine { align-self: flex-start; }
     .msg-row.other { align-self: flex-end; }
-    @media (min-width: 720px) { .msg-row { max-width: 68%; } }
+    .msg-row.announcement { align-self: stretch; max-width: 100%; }
+    @media (min-width: 720px) { .msg-row { max-width: 68%; } .msg-row.announcement { max-width: 86%; align-self: center; } }
 
     .msg-bubble {
       background: var(--msg-in); border: 1px solid var(--border);
@@ -290,6 +343,11 @@
     .msg-bubble.edu-bubble {
       background: var(--msg-edu) !important;
       border-right: 4px solid var(--success) !important;
+    }
+    .msg-bubble.ann-bubble {
+      background: var(--msg-ann) !important;
+      border: 1.5px solid var(--accent) !important;
+      border-right: 5px solid var(--danger) !important;
     }
     .msg-bubble.pinned-bubble {
       box-shadow: 0 0 0 1px var(--accent), 0 6px 18px rgba(0,0,0,0.22);
@@ -305,12 +363,20 @@
       background: rgba(128,128,128,0.18); color: var(--text); font-weight: normal;
     }
     .admin-badge { background: var(--accent); color: var(--accent-contrast); font-weight: bold; }
+    .mod-badge { background: rgba(56,189,248,0.22); color: #38bdf8; border: 1px solid rgba(56,189,248,0.4); font-weight: bold; }
     .edu-badge {
       display: inline-flex; align-items: center; gap: 4px;
       font-size: 10.5px; font-weight: bold; padding: 2px 8px; border-radius: 999px;
       background: rgba(16,185,129,0.2); color: var(--success); border: 1px solid rgba(16,185,129,0.4);
       margin-bottom: 6px;
     }
+    .ann-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 10.5px; font-weight: bold; padding: 2px 9px; border-radius: 999px;
+      background: rgba(239,68,68,0.22); color: #fca5a5; border: 1px solid rgba(239,68,68,0.45);
+      margin-bottom: 6px; margin-left: 5px;
+    }
+    html[data-v12-theme="pearl-light"] .ann-badge { color: #b91c1c; }
 
     .reply-quote {
       background: rgba(0,0,0,0.2); border-right: 3px solid var(--accent);
@@ -325,7 +391,6 @@
     .msg-text a { color: #38bdf8; text-decoration: underline; word-break: break-all; }
     html[data-v12-theme="pearl-light"] .msg-text a { color: #0369a1; }
 
-    /* Media & Attachments */
     .att-img {
       max-width: 100%; max-height: 300px; border-radius: 12px;
       display: block; margin-top: 6px; cursor: zoom-in; object-fit: cover;
@@ -357,14 +422,14 @@
     html[data-v12-theme="pearl-light"] .link-card { color: #0369a1; }
 
     .msg-foot {
-      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      display: flex; align-items: center; justify-content: space-between; gap: 6px;
       margin-top: 7px; padding-top: 5px; border-top: 1px dashed rgba(128,128,128,0.2);
       font-size: 10.5px; color: var(--muted); flex-wrap: wrap;
     }
-    .msg-tools { display: flex; gap: 4px; flex-wrap: wrap; }
+    .msg-tools { display: flex; gap: 3px; flex-wrap: wrap; }
     .mt-btn {
       background: transparent; border: 1px solid transparent; color: var(--muted);
-      border-radius: 7px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-family: inherit;
+      border-radius: 7px; padding: 2px 6px; font-size: 10.5px; cursor: pointer; font-family: inherit;
     }
     .mt-btn:hover { border-color: var(--border); color: var(--text); }
     .reactions-row { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
@@ -413,35 +478,139 @@
 
     .composer-row { display: flex; align-items: flex-end; gap: 6px; }
     .c-btn {
-      width: 40px; height: 40px; flex: 0 0 40px; border-radius: 12px;
+      width: 39px; height: 39px; flex: 0 0 39px; border-radius: 11px;
       background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
-      font-size: 17px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
     }
+    .c-btn:disabled { opacity: 0.35; cursor: not-allowed; }
     .c-btn.active { background: var(--success); color: #04110f; border-color: var(--success); }
     .c-btn.recording { background: var(--danger); color: #fff; border-color: var(--danger); animation: pulseRec 1s infinite; }
     @keyframes pulseRec { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
     .c-send {
-      width: 44px; height: 40px; flex: 0 0 44px; border-radius: 12px; border: none;
+      width: 44px; height: 39px; flex: 0 0 44px; border-radius: 11px; border: none;
       background: var(--accent); color: var(--accent-contrast);
-      font-size: 18px; font-weight: bold; cursor: pointer;
+      font-size: 17px; font-weight: bold; cursor: pointer;
     }
+    .c-send:disabled { opacity: 0.4; cursor: not-allowed; }
     #msgInput {
-      flex: 1; min-height: 40px; max-height: 120px; resize: none;
-      padding: 9px 11px; border-radius: 12px;
+      flex: 1; min-height: 39px; max-height: 120px; resize: none;
+      padding: 8px 11px; border-radius: 11px;
       background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
-      font-family: inherit; font-size: 14px; line-height: 1.5;
+      font-family: inherit; font-size: 13.5px; line-height: 1.5;
     }
     #msgInput:focus { outline: none; border-color: var(--accent); }
+    #msgInput:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    /* ============== DRAWERS & MODALS ============== */
+    /* ============== HEAD NURSE ADMIN PANEL TAB ============== */
+    #adminPanelView {
+      flex: 1 1 auto; display: none; flex-direction: column; min-height: 0; overflow: hidden;
+    }
+    #adminPanelView.active { display: flex; }
+
+    .admin-subtabs {
+      flex: 0 0 auto; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+      padding: 8px 10px; background: rgba(0,0,0,0.16); border-bottom: 1px solid var(--border);
+    }
+    .admin-subtabs::-webkit-scrollbar { display: none; }
+    .as-btn {
+      flex: 0 0 auto; padding: 7px 12px; border-radius: 10px;
+      background: var(--card); color: var(--muted); border: 1px solid var(--border);
+      font-family: inherit; font-size: 12px; font-weight: bold; cursor: pointer;
+    }
+    .as-btn.active {
+      background: var(--accent); color: var(--accent-contrast); border-color: var(--accent);
+    }
+
+    .admin-body {
+      flex: 1 1 auto; overflow-y: auto; padding: 12px 11px 30px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .admin-section { display: none; }
+    .admin-section.active { display: block; }
+
+    .adm-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 14px; margin-bottom: 12px;
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+    .adm-card h3 {
+      margin: 0 0 10px; font-size: 14px; color: var(--accent);
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px dashed var(--border); padding-bottom: 7px;
+    }
+
+    .adm-member-card {
+      background: var(--input-bg); border: 1px solid var(--border);
+      border-radius: 13px; padding: 10px 11px; margin-bottom: 8px;
+    }
+    .adm-member-card.banned { border-color: rgba(239,68,68,0.55); opacity: 0.85; }
+    .adm-member-card.muted { border-color: rgba(245,158,11,0.55); }
+    .am-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+    }
+    .am-badges { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
+    .status-tag {
+      font-size: 10px; padding: 2px 7px; border-radius: 999px; font-weight: bold;
+    }
+    .st-online { background: rgba(16,185,129,0.2); color: var(--success); }
+    .st-muted { background: rgba(245,158,11,0.2); color: var(--warn); }
+    .st-banned { background: rgba(239,68,68,0.2); color: var(--danger); }
+    .st-mod { background: rgba(56,189,248,0.2); color: #38bdf8; }
+    .am-actions {
+      display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px;
+      padding-top: 7px; border-top: 1px dashed rgba(128,128,128,0.2);
+    }
+    .am-btn {
+      padding: 5px 8px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-family: inherit;
+      font-size: 11px; cursor: pointer;
+    }
+    .am-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .am-btn.warn { border-color: rgba(245,158,11,0.5); color: var(--warn); }
+    .am-btn.danger { border-color: rgba(239,68,68,0.5); color: var(--danger); }
+    .am-btn.ok { border-color: rgba(16,185,129,0.5); color: var(--success); }
+
+    .toggle-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 10px 11px; border-radius: 12px; background: var(--input-bg);
+      border: 1px solid var(--border); margin-bottom: 8px;
+    }
+    .toggle-row b { display: block; font-size: 12.5px; }
+    .toggle-row span { display: block; font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+    .switch-btn {
+      flex: 0 0 auto; min-width: 68px; padding: 6px 10px; border-radius: 999px;
+      border: 1px solid var(--border); background: rgba(128,128,128,0.2);
+      color: var(--text); font-family: inherit; font-size: 11.5px; font-weight: bold; cursor: pointer;
+    }
+    .switch-btn.on { background: var(--success); color: #04110f; border-color: var(--success); }
+    .switch-btn.locked-on { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+    .kpi-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px;
+    }
+    .kpi-box {
+      background: var(--input-bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 10px 6px; text-align: center;
+    }
+    .kpi-box b { display: block; font-size: 18px; color: var(--accent); }
+    .kpi-box span { font-size: 10.5px; color: var(--muted); }
+
+    .audit-item {
+      padding: 8px 10px; border-radius: 10px; background: var(--input-bg);
+      border-right: 3px solid var(--accent); margin-bottom: 6px; font-size: 11.5px; line-height: 1.6;
+    }
+    .audit-time { font-size: 10px; color: var(--muted); }
+
+    /* ============== MODALS ============== */
     .overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+      position: fixed; inset: 0; background: rgba(0,0,0,0.58);
       backdrop-filter: blur(5px); z-index: 100; display: none;
       align-items: center; justify-content: center; padding: 14px;
     }
     .overlay.open { display: flex; }
     .modal-box {
-      width: min(420px, 100%); max-height: 82vh; overflow-y: auto;
+      width: min(420px, 100%); max-height: 84vh; overflow-y: auto;
       background: var(--card-solid); color: var(--text);
       border: 1px solid var(--border); border-radius: 18px; padding: 16px;
       box-shadow: var(--shadow);
@@ -459,10 +628,10 @@
     #lightboxImg { max-width: 95vw; max-height: 88vh; border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.65); }
 
     #toast {
-      position: fixed; top: 70px; left: 50%; transform: translateX(-50%);
+      position: fixed; top: 68px; left: 50%; transform: translateX(-50%);
       background: var(--card-solid); color: var(--text); border: 1px solid var(--accent);
       padding: 8px 16px; border-radius: 999px; font-size: 12px; font-weight: bold;
-      z-index: 200; display: none; box-shadow: var(--shadow);
+      z-index: 200; display: none; box-shadow: var(--shadow); text-align: center; max-width: 90vw;
     }
   </style>
 </head>
@@ -475,7 +644,7 @@
       <div class="auth-head">
         <div>
           <h1>💬 چت‌روم تخصصی بخش‌های بیمارستان</h1>
-          <div class="auth-sub">ارتباط کاری هم‌زمان، تبادل فایل، عکس، فیلم، لینک و بانک آموزشی هر بخش</div>
+          <div class="auth-sub">ارتباط کاری هم‌زمان، بانک آموزشی هر بخش و پنل اختصاصی سرپرستار</div>
         </div>
         <button type="button" class="icon-btn" onclick="openThemeModal()" title="انتخاب تم">🎨 تم</button>
       </div>
@@ -511,22 +680,22 @@
           <input id="inpWardCode" type="text" placeholder="مثلاً: CCU101" dir="ltr" style="text-align:center;">
         </div>
         <div class="field">
-          <label for="inpAdminCode">کد سرپرستار / مدیریت (اختیاری):</label>
-          <input id="inpAdminCode" type="password" placeholder="برای پین، حذف و پشتیبان‌گیری" dir="ltr" style="text-align:center;">
+          <label for="inpAdminCode">کد سرپرستار / مدیریت (فقط برای مدیر):</label>
+          <input id="inpAdminCode" type="password" placeholder="برای فعال‌شدن تب مدیریت سرپرستار" dir="ltr" style="text-align:center;">
         </div>
       </div>
 
       <button type="button" id="btnJoin" class="btn-main" onclick="handleJoin()">ورود به چت‌روم بخش</button>
 
       <div class="auth-hint">
-        🔑 <b>کدهای پیش‌فرض برای تست اولیه:</b>
+        🔑 <b>کدهای پیش‌فرض بخش‌ها:</b>
         CCU: <code>CCU101</code> | Post-CCU: <code>POST102</code> | ICU قلب: <code>ICU103</code> | بستری قلب: <code>CARD104</code> | کت‌لب: <code>CATH105</code> | اورژانس: <code>ER107</code> | عمومی: <code>HOSP100</code><br>
-        🛡️ کد مدیریت پیش‌فرض: <code>HEAD999</code> (از تنظیمات Render قابل تغییر است).
+        🛡️ <b>ورود سرپرستار:</b> با وارد کردن کد <code>ADMIN_CODE</code> (پیش‌فرض: <code>HEAD999</code>) تب اختصاصی <b>«🛡️ پنل مدیریت سرپرستار»</b> برای شما فعال می‌شود.
       </div>
     </div>
   </div>
 
-  <!-- ================= محیط چت‌روم بخش ================= -->
+  <!-- ================= محیط اصلی چت‌روم و پنل سرپرستار ================= -->
   <div id="chatApp">
     <header class="chat-header">
       <div class="ch-info">
@@ -540,78 +709,321 @@
         </div>
       </div>
       <div class="ch-actions">
-        <button type="button" class="icon-btn" onclick="toggleSearch()" title="جستجو">🔍</button>
-        <button type="button" class="icon-btn" onclick="openMembersModal()" title="اعضای آنلاین و مدیریت">👥 <span id="onlineCountBadge">0</span></button>
+        <button type="button" class="icon-btn" id="hdrSearchBtn" onclick="toggleSearch()" title="جستجو">🔍</button>
+        <button type="button" class="icon-btn" onclick="openMembersModal()" title="اعضای آنلاین">👥 <span id="onlineCountBadge">0</span></button>
         <button type="button" class="icon-btn" onclick="openThemeModal()" title="تغییر تم">🎨</button>
-        <button type="button" class="icon-btn" onclick="switchWardScreen()" title="تغییر بخش">🚪 بخش‌ها</button>
+        <button type="button" class="icon-btn" onclick="switchWardScreen()" title="تغییر بخش">🚪</button>
       </div>
     </header>
 
-    <div class="toolbar-bar">
-      <div class="filter-chips" id="filterChips">
-        <button type="button" class="f-chip active" data-filter="all">همه پیام‌ها</button>
-        <button type="button" class="f-chip" data-filter="edu">📚 بانک آموزشی</button>
-        <button type="button" class="f-chip" data-filter="media">🎬 عکس و فیلم</button>
-        <button type="button" class="f-chip" data-filter="file">📄 فایل و PDF</button>
-        <button type="button" class="f-chip" data-filter="link">🔗 لینک‌ها</button>
-        <button type="button" class="f-chip" data-filter="pinned">📌 پین‌شده</button>
-      </div>
-      <div class="search-row" id="searchRow">
-        <input id="searchInput" type="text" placeholder="🔍 جستجو در متن، فرستنده، نام فایل یا موضوع آموزشی...">
-        <button type="button" class="icon-btn" onclick="clearSearch()">✕</button>
-      </div>
+    <!-- نوار ۲ تبه اختصاصی سرپرستار (فقط برای Admin نمایش داده می‌شود) -->
+    <div id="adminModeTabs">
+      <button type="button" class="mode-tab-btn active" id="tabBtnChat" onclick="switchMainMode('chat')">💬 چت و آموزش بخش</button>
+      <button type="button" class="mode-tab-btn" id="tabBtnAdmin" onclick="switchMainMode('admin')">🛡️ پنل مدیریت سرپرستار <span class="tab-pill-badge" id="adminAlertBadge" style="display:none;">0</span></button>
     </div>
 
-    <div id="pinnedBar" onclick="jumpToPinned()">
-      <span>📌</span>
-      <span class="pin-snippet" id="pinnedSnippet"></span>
-      <span style="font-size:10.5px; color:var(--accent);">مشاهده</span>
-    </div>
-
-    <div class="privacy-strip">
-      ⚠️ جهت حفظ محرمانگی بالینی، از ارسال نام کامل، کدملی، شماره پرونده یا عکس چهره بیمار خودداری کنید.
-    </div>
-
-    <main id="messagesWrap"></main>
-    <div id="typingHint"></div>
-
-    <footer class="composer-wrap">
-      <div class="upload-progress" id="uploadProgress"><div class="upload-progress-bar" id="uploadProgressBar"></div></div>
-
-      <div class="composer-banner" id="replyBanner">
-        <div style="min-width:0;">
-          <b id="replyBannerName" style="color:var(--accent);"></b>
-          <div id="replyBannerText" style="color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></div>
+    <!-- ============ نمای ۱: چت‌روم بخش ============ -->
+    <div id="chatView">
+      <div class="toolbar-bar">
+        <div class="filter-chips" id="filterChips">
+          <button type="button" class="f-chip active" data-filter="all">همه پیام‌ها</button>
+          <button type="button" class="f-chip" data-filter="edu">📚 بانک آموزشی</button>
+          <button type="button" class="f-chip" data-filter="media">🎬 عکس و فیلم</button>
+          <button type="button" class="f-chip" data-filter="file">📄 فایل و PDF</button>
+          <button type="button" class="f-chip" data-filter="link">🔗 لینک‌ها</button>
+          <button type="button" class="f-chip" data-filter="pinned">📌 پین‌شده</button>
         </div>
-        <button type="button" class="icon-btn" onclick="cancelReply()">✕</button>
+        <div class="search-row" id="searchRow">
+          <input id="searchInput" type="text" placeholder="🔍 جستجو در متن، فرستنده، نام فایل یا موضوع آموزشی...">
+          <button type="button" class="icon-btn" onclick="clearSearch()">✕</button>
+        </div>
       </div>
 
-      <div class="composer-banner" id="attBanner">
-        <div id="attBannerText" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></div>
-        <button type="button" class="icon-btn" onclick="clearPendingAttachment()">✕ حذف</button>
+      <div id="pinnedBar" onclick="jumpToPinned()">
+        <span>📌</span>
+        <span class="pin-snippet" id="pinnedSnippet"></span>
+        <span style="font-size:10.5px; color:var(--accent);">مشاهده</span>
       </div>
 
-      <div class="edu-options" id="eduOptions">
-        <span style="font-size:11px; color:var(--success); font-weight:bold;">📚 برچسب آموزشی:</span>
-        <button type="button" class="edu-tag-chip active" data-tag="آموزش بالینی">آموزش بالینی</button>
-        <button type="button" class="edu-tag-chip" data-tag="داروشناسی">داروشناسی</button>
-        <button type="button" class="edu-tag-chip" data-tag="ECG و ریتم">ECG و ریتم</button>
-        <button type="button" class="edu-tag-chip" data-tag="تجهیزات و دستگاه">تجهیزات و دستگاه</button>
-        <button type="button" class="edu-tag-chip" data-tag="پروتکل و بخشنامه">پروتکل و بخشنامه</button>
+      <div id="roomNoticeBar"></div>
+
+      <div class="privacy-strip">
+        ⚠️ جهت حفظ محرمانگی بالینی، از ارسال نام کامل، کدملی، شماره پرونده یا عکس چهره بیمار خودداری کنید.
       </div>
 
-      <div class="composer-row">
-        <button type="button" class="c-btn" id="btnEduToggle" onclick="toggleEduMode()" title="ارسال به‌عنوان مطلب آموزشی">📚</button>
-        <button type="button" class="c-btn" onclick="document.getElementById('fileInput').click()" title="ارسال عکس، فیلم یا فایل PDF">📎</button>
-        <button type="button" class="c-btn" id="btnVoice" onclick="toggleVoiceRecord()" title="ضبط پیام صوتی">🎙️</button>
-        <input type="file" id="fileInput" style="display:none;" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip">
-        <textarea id="msgInput" rows="1" placeholder="پیام کاری، لینک یا نکته آموزشی بنویسید..."></textarea>
-        <button type="button" class="c-send" id="btnSend" onclick="sendMessage()" title="ارسال">➤</button>
+      <main id="messagesWrap"></main>
+      <div id="typingHint"></div>
+
+      <footer class="composer-wrap">
+        <div class="upload-progress" id="uploadProgress"><div class="upload-progress-bar" id="uploadProgressBar"></div></div>
+
+        <div class="composer-banner" id="replyBanner">
+          <div style="min-width:0;">
+            <b id="replyBannerName" style="color:var(--accent);"></b>
+            <div id="replyBannerText" style="color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></div>
+          </div>
+          <button type="button" class="icon-btn" onclick="cancelReply()">✕</button>
+        </div>
+
+        <div class="composer-banner" id="attBanner">
+          <div id="attBannerText" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></div>
+          <button type="button" class="icon-btn" onclick="clearPendingAttachment()">✕ حذف</button>
+        </div>
+
+        <div class="edu-options" id="eduOptions">
+          <span style="font-size:11px; color:var(--success); font-weight:bold;">📚 برچسب آموزشی:</span>
+          <button type="button" class="edu-tag-chip active" data-tag="آموزش بالینی">آموزش بالینی</button>
+          <button type="button" class="edu-tag-chip" data-tag="داروشناسی">داروشناسی</button>
+          <button type="button" class="edu-tag-chip" data-tag="ECG و ریتم">ECG و ریتم</button>
+          <button type="button" class="edu-tag-chip" data-tag="تجهیزات و دستگاه">تجهیزات و دستگاه</button>
+          <button type="button" class="edu-tag-chip" data-tag="پروتکل و بخشنامه">پروتکل و بخشنامه</button>
+        </div>
+
+        <div class="composer-row">
+          <button type="button" class="c-btn" id="btnEduToggle" onclick="toggleEduMode()" title="ارسال به‌عنوان مطلب آموزشی">📚</button>
+          <button type="button" class="c-btn" id="btnAttach" onclick="document.getElementById('fileInput').click()" title="ارسال عکس، فیلم یا فایل PDF">📎</button>
+          <button type="button" class="c-btn" id="btnVoice" onclick="toggleVoiceRecord()" title="ضبط پیام صوتی">🎙️</button>
+          <input type="file" id="fileInput" style="display:none;" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip">
+          <textarea id="msgInput" rows="1" placeholder="پیام کاری، لینک یا نکته آموزشی بنویسید..."></textarea>
+          <button type="button" class="c-send" id="btnSend" onclick="sendMessage()" title="ارسال">➤</button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ============ نمای ۲: پنل اختصاصی مدیریت سرپرستار ============ -->
+    <div id="adminPanelView">
+      <div class="admin-subtabs" id="adminSubtabs">
+        <button type="button" class="as-btn active" data-sub="members">👥 اعضا و دسترسی</button>
+        <button type="button" class="as-btn" data-sub="moderation">📢 اطلاعیه و پاک‌سازی</button>
+        <button type="button" class="as-btn" data-sub="controls">⚙️ کنترل اتاق و کد بخش</button>
+        <button type="button" class="as-btn" data-sub="analytics">📊 آمار، لاگ و پشتیبان</button>
       </div>
-    </footer>
+
+      <div class="admin-body">
+        <!-- زیرتب ۱: مدیریت اعضا (افزودن، سکوت، اخراج، مسدود، ناظر، حذف) -->
+        <section id="admSec_members" class="admin-section active">
+          <div class="adm-card">
+            <h3>➕ افزودن مستقیم پرسنل به بخش</h3>
+            <div class="row2">
+              <div class="field">
+                <label for="admAddName">نام و نام خانوادگی همکار:</label>
+                <input id="admAddName" type="text" placeholder="مثلاً: علی رضایی">
+              </div>
+              <div class="field">
+                <label for="admAddRole">سمت سازمانی:</label>
+                <select id="admAddRole">
+                  <option value="پرستار">پرستار</option>
+                  <option value="کمک‌سرپرستار">کمک‌سرپرستار</option>
+                  <option value="کمک‌بهیار">کمک‌بهیار</option>
+                  <option value="پزشک / رزیدنت">پزشک / رزیدنت</option>
+                  <option value="کارشناس اتاق عمل / هوشبری">کارشناس اتاق عمل / هوشبری</option>
+                </select>
+              </div>
+            </div>
+            <label style="display:flex;align-items:center;gap:7px;font-size:12px;margin-bottom:8px;cursor:pointer;">
+              <input type="checkbox" id="admAddMod" style="width:auto;">
+              <span>اعطای دسترسی <b>ناظر / کمک‌سرپرستار</b> (امکان پین، حذف پیام و ارسال در حالت قفل)</span>
+            </label>
+            <button type="button" class="btn-main" style="padding:10px;font-size:13px;" onclick="adminAddMember()">➕ ثبت و تایید کاربر در لیست بخش</button>
+          </div>
+
+          <div class="adm-card">
+            <h3>
+              <span>👥 فهرست اعضای بخش</span>
+              <span id="admMembersCount" style="font-size:11.5px;color:var(--muted);">0 عضو</span>
+            </h3>
+            <div class="field" style="margin-bottom:8px;">
+              <input id="admMemberSearch" type="text" placeholder="🔍 جستجوی نام یا سمت عضو..." oninput="renderAdminMembers()">
+            </div>
+            <div class="filter-chips" id="admMemberFilters" style="margin-bottom:10px;">
+              <button type="button" class="f-chip active" data-mf="all">همه</button>
+              <button type="button" class="f-chip" data-mf="online">🟢 آنلاین</button>
+              <button type="button" class="f-chip" data-mf="muted">🔇 سایلنت</button>
+              <button type="button" class="f-chip" data-mf="banned">🚫 مسدود</button>
+              <button type="button" class="f-chip" data-mf="mod">⭐ ناظر</button>
+            </div>
+            <div id="admMembersList"></div>
+          </div>
+        </section>
+
+        <!-- زیرتب ۲: اطلاعیه رسمی و پاک‌سازی پیام‌ها -->
+        <section id="admSec_moderation" class="admin-section">
+          <div class="adm-card">
+            <h3>📢 ارسال اطلاعیه رسمی سرپرستار (پین خودکار)</h3>
+            <div class="field">
+              <textarea id="admAnnText" rows="3" placeholder="متن بخشنامه، برنامه شیفت یا اطلاعیه مهم بخش را بنویسید..."></textarea>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:10px;font-size:12px;">
+              <label style="display:flex;align-items:center;gap:7px;cursor:pointer;">
+                <input type="checkbox" id="admAnnAllWards" style="width:auto;">
+                <span>🌐 انتشار سراسری همزمان در <b>همه بخش‌های بیمارستان</b></span>
+              </label>
+              <label style="display:flex;align-items:center;gap:7px;cursor:pointer;">
+                <input type="checkbox" id="admAnnEdu" checked style="width:auto;">
+                <span>📚 ذخیره همزمان در <b>بانک آموزشی / پروتکل و بخشنامه</b></span>
+              </label>
+            </div>
+            <button type="button" class="btn-main" style="padding:10px;font-size:13px;" onclick="adminSendAnnouncement()">📢 انتشار و پین اطلاعیه</button>
+          </div>
+
+          <div class="adm-card">
+            <h3>🧹 مدیریت و پاک‌سازی گروهی پیام‌ها</h3>
+            <p style="font-size:11.5px;color:var(--muted);margin:0 0 10px;line-height:1.6;">
+              برای حذف یک پیام خاص می‌توانید مستقیم از زیر همان پیام در چت روی دکمه <b>🗑</b> بزنید. از ابزارهای زیر برای پاک‌سازی سریع بخش استفاده کنید:
+            </p>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <button type="button" class="btn-soft" onclick="adminPurge('non_edu')">🧽 پاک‌سازی چت‌های عادی (حفظ بانک آموزشی و پین‌شده‌ها)</button>
+              <button type="button" class="btn-soft" onclick="adminPurge('older_24h')">🕒 حذف پیام‌های قدیمی‌تر از ۲۴ ساعت (حفظ آموزشی و پین)</button>
+              <button type="button" class="btn-danger" onclick="adminPurge('all')">🗑️ پاک‌سازی کامل کل تاریخچه چت این بخش</button>
+            </div>
+          </div>
+
+          <div class="adm-card">
+            <h3>📌 پیام‌های پین‌شده بخش</h3>
+            <div id="admPinnedList"></div>
+          </div>
+        </section>
+
+        <!-- زیرتب ۳: کنترل اتاق، کد عضویت و افزودن بخش جدید -->
+        <section id="admSec_controls" class="admin-section">
+          <div class="adm-card">
+            <h3>🎛️ کنترل‌های لحظه‌ای چت‌روم بخش</h3>
+
+            <div class="toggle-row">
+              <div>
+                <b>🔒 قفل کردن چت (حالت فقط‌خواندنی)</b>
+                <span>فقط سرپرستار و ناظران می‌توانند پیام بدهند؛ سایر پرسنل فقط مطالعه می‌کنند.</span>
+              </div>
+              <button type="button" class="switch-btn" id="swLocked" onclick="adminToggleSetting('locked')">خاموش</button>
+            </div>
+
+            <div class="toggle-row">
+              <div>
+                <b>📎 محدودیت ارسال عکس، فیلم و فایل</b>
+                <span>کاربران عادی فقط می‌توانند متن و لینک بفرستند (جلوگیری از شلوغی و مصرف حجم).</span>
+              </div>
+              <button type="button" class="switch-btn" id="swMedia" onclick="adminToggleSetting('disableMedia')">آزاد</button>
+            </div>
+
+            <div class="toggle-row">
+              <div>
+                <b>🛡️ عضویت بسته (فقط اعضای تاییدشده)</b>
+                <span>فقط کسانی که نامشان در تب «اعضا» توسط سرپرستار ثبت شده اجازه ورود دارند.</span>
+              </div>
+              <button type="button" class="switch-btn" id="swWhitelist" onclick="adminToggleSetting('whitelistOnly')">باز</button>
+            </div>
+
+            <div class="toggle-row">
+              <div>
+                <b>⏱ حالت آرام (Slow Mode)</b>
+                <span>حداقل فاصله زمانی بین دو پیام متوالی کاربران عادی.</span>
+              </div>
+              <select id="admSlowMode" onchange="adminSetSlowMode(this.value)" style="width:125px;padding:6px 8px;border-radius:9px;background:var(--card);color:var(--text);border:1px solid var(--border);font-family:inherit;font-size:12px;">
+                <option value="0">خاموش</option>
+                <option value="5">۵ ثانیه</option>
+                <option value="10">۱۰ ثانیه</option>
+                <option value="30">۳۰ ثانیه</option>
+                <option value="60">۱ دقیقه</option>
+                <option value="180">۳ دقیقه</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="adm-card">
+            <h3>🔑 تغییر زنده کد عضویت این بخش</h3>
+            <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">
+              کد فعلی این بخش: <code id="admCurrentCode" style="color:var(--accent);font-size:14px;font-weight:bold;">---</code>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <input id="admNewWardCode" type="text" dir="ltr" placeholder="کد جدید (مثلاً CCU2026)" style="flex:1;padding:9px 11px;border-radius:10px;background:var(--input-bg);color:var(--text);border:1px solid var(--border);text-align:center;">
+              <button type="button" class="btn-main" style="width:auto;margin:0;padding:9px 14px;font-size:12.5px;" onclick="adminChangeWardCode()">ذخیره کد</button>
+            </div>
+          </div>
+
+          <div class="adm-card">
+            <h3>🏥 ایجاد بخش جدید در سامانه</h3>
+            <div class="row2">
+              <div class="field">
+                <label for="admNewWardName">نام بخش جدید:</label>
+                <input id="admNewWardName" type="text" placeholder="مثلاً: ICU داخلی">
+              </div>
+              <div class="field">
+                <label for="admNewWardAccess">کد عضویت بخش جدید:</label>
+                <input id="admNewWardAccess" type="text" dir="ltr" style="text-align:center;" placeholder="مثلاً: MICU108">
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="admNewWardIcon">آیکون (ایموجی):</label>
+                <input id="admNewWardIcon" type="text" value="🏥" style="text-align:center;">
+              </div>
+              <div class="field">
+                <label for="admNewWardDesc">توضیح کوتاه:</label>
+                <input id="admNewWardDesc" type="text" placeholder="مراقبت‌های ویژه داخلی">
+              </div>
+            </div>
+            <button type="button" class="btn-soft" style="width:100%;" onclick="adminCreateWard()">➕ ساخت اتاق جدید</button>
+          </div>
+        </section>
+
+        <!-- زیرتب ۴: آمار، گزارش اقدامات (Audit Log) و پشتیبان‌گیری -->
+        <section id="admSec_analytics" class="admin-section">
+          <div class="adm-card">
+            <h3>📊 آمار زنده بخش</h3>
+            <div class="kpi-grid" id="admKpiGrid"></div>
+          </div>
+
+          <div class="adm-card">
+            <h3>💾 پشتیبان‌گیری و خروجی اکسل</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <button type="button" class="btn-soft" onclick="downloadBackup()">⬇️ پشتیبان کامل (JSON)</button>
+              <button type="button" class="btn-soft" onclick="document.getElementById('restoreInput').click()">⬆️ بازگردانی (JSON)</button>
+              <button type="button" class="btn-soft" onclick="exportWardCsv(false)">📊 خروجی اکسل کل چت</button>
+              <button type="button" class="btn-soft" onclick="exportWardCsv(true)">📚 خروجی بانک آموزشی</button>
+            </div>
+            <input type="file" id="restoreInput" accept=".json" style="display:none;" onchange="restoreBackup(this)">
+            <p style="font-size:10.5px;color:var(--muted);margin:8px 0 0;line-height:1.6;">
+              پشتیبان JSON شامل پیام‌ها، اعضای تاییدشده، سکوت‌ها، مسدودی‌ها و کد بخش‌ها است تا در صورت ری‌استارت Render با یک کلیک برگردد.
+            </p>
+          </div>
+
+          <div class="adm-card">
+            <h3>📜 گزارش اقدامات مدیریتی (Audit Log)</h3>
+            <div id="admAuditList"></div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
 
-  <!-- ================= مودال اعضای آنلاین و ابزار سرپرستار ================= -->
+  <!-- ================= مودال سکوت کردن کاربر (انتخاب مدت و علت) ================= -->
+  <div class="overlay" id="muteModal" onclick="if(event.target===this)closeModal('muteModal')">
+    <div class="modal-box">
+      <div class="modal-head">
+        <span>🔇 سکوت کردن کاربر</span>
+        <button type="button" class="icon-btn" onclick="closeModal('muteModal')">✕</button>
+      </div>
+      <div id="muteTargetLabel" style="font-size:13px;font-weight:bold;color:var(--accent);margin-bottom:10px;"></div>
+      <div class="field">
+        <label for="muteDuration">مدت سکوت:</label>
+        <select id="muteDuration">
+          <option value="15">۱۵ دقیقه</option>
+          <option value="60" selected>۱ ساعت</option>
+          <option value="360">۶ ساعت</option>
+          <option value="1440">۲۴ ساعت (۱ روز)</option>
+          <option value="10080">۷ روز</option>
+          <option value="permanent">سکوت دائمی (تا رفع توسط سرپرستار)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="muteReason">علت سکوت (اختیاری):</label>
+        <input id="muteReason" type="text" placeholder="مثلاً: ارسال پیام غیرمرتبط با کار بخش">
+      </div>
+      <button type="button" class="btn-main" style="background:var(--warn);color:#111;" onclick="confirmMuteUser()">🔇 اعمال سکوت</button>
+    </div>
+  </div>
+
+  <!-- ================= مودال اعضای آنلاین ================= -->
   <div class="overlay" id="membersModal" onclick="if(event.target===this)closeModal('membersModal')">
     <div class="modal-box">
       <div class="modal-head">
@@ -619,17 +1031,6 @@
         <button type="button" class="icon-btn" onclick="closeModal('membersModal')">✕</button>
       </div>
       <div id="membersList"></div>
-      <div id="adminToolsBox" style="display:none; margin-top:14px; padding-top:12px; border-top:1px dashed var(--border);">
-        <div style="font-size:12.5px; font-weight:bold; color:var(--accent); margin-bottom:8px;">🛡️ ابزار مدیریت سرپرستار</div>
-        <div style="display:flex; gap:6px; flex-wrap:wrap;">
-          <button type="button" class="icon-btn" style="flex:1;" onclick="downloadBackup()">⬇️ دانلود پشتیبان پیام‌ها</button>
-          <button type="button" class="icon-btn" style="flex:1;" onclick="document.getElementById('restoreInput').click()">⬆️ بازگردانی پشتیبان</button>
-          <input type="file" id="restoreInput" accept=".json" style="display:none;" onchange="restoreBackup(this)">
-        </div>
-        <p style="font-size:10.5px; color:var(--muted); margin:8px 0 0; line-height:1.6;">
-          در پلن رایگان Render، با ری‌استارت سرور فایل‌های داخلی ممکن است پاک شوند؛ پیشنهاد می‌شود در پایان هفته یک پشتیبان JSON بگیرید.
-        </p>
-      </div>
     </div>
   </div>
 
@@ -668,9 +1069,15 @@
     const state = {
       wards: [],
       selectedWardId: 'ccu',
-      session: null, // { user, ward, wardCode, adminCode }
+      session: null,
       messages: [],
       online: [],
+      wardSettings: { locked: false, disableMedia: false, whitelistOnly: false, slowModeSec: 0 },
+      memberStatus: { muted: false, mutedUntil: null, muteReason: '', isModerator: false },
+      adminState: null,
+      adminMemberFilter: 'all',
+      muteTarget: null,
+      mainMode: 'chat',
       filter: 'all',
       search: '',
       isEduMode: false,
@@ -694,7 +1101,7 @@
       t.textContent = msg;
       t.style.display = 'block';
       clearTimeout(toast._t);
-      toast._t = setTimeout(() => { t.style.display = 'none'; }, 3200);
+      toast._t = setTimeout(() => { t.style.display = 'none'; }, 3400);
     }
     function fmtBytes(b) {
       if (!b) return '';
@@ -711,9 +1118,15 @@
       const safe = esc(raw);
       return safe.replace(/(https?:\/\/[^\s<]+)/gi, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
     }
+    function isAdminUser() {
+      return Boolean(state.session && state.session.user && state.session.user.isAdmin);
+    }
+    function isModOrAdmin() {
+      return isAdminUser() || Boolean(state.memberStatus && state.memberStatus.isModerator);
+    }
 
     // ==========================================
-    // تم‌ها و هماهنگی با اپلیکیشن اصلی قلب
+    // تم‌ها و هماهنگی با اپ اصلی
     // ==========================================
     window.applyTheme = function(id) {
       const valid = THEMES.some(t => t.id === id) ? id : 'obsidian-gold';
@@ -721,7 +1134,6 @@
       try { localStorage.setItem(THEME_KEY, valid); } catch (e) {}
       renderThemeModal();
     };
-
     function renderThemeModal() {
       const cur = document.documentElement.getAttribute('data-v12-theme') || 'obsidian-gold';
       const box = $('themeList');
@@ -736,7 +1148,6 @@
         </button>`
       ).join('');
     }
-
     window.openThemeModal = function() { renderThemeModal(); $('themeModal').classList.add('open'); };
     window.openMembersModal = function() {
       const box = $('membersList');
@@ -746,16 +1157,14 @@
         box.innerHTML = state.online.map(u =>
           `<div class="member-item">
             <span><span class="live-dot" style="margin-left:6px;"></span><b>${esc(u.name)}</b></span>
-            <span class="role-badge ${u.isAdmin ? 'admin-badge' : ''}">${esc(u.role)}${u.isAdmin ? ' ★' : ''}</span>
+            <span class="role-badge ${u.isAdmin ? 'admin-badge' : (u.isModerator ? 'mod-badge' : '')}">${esc(u.role)}${u.isAdmin ? ' ★' : (u.isModerator ? ' ⭐' : '')}</span>
           </div>`
         ).join('');
       }
-      $('adminToolsBox').style.display = (state.session && state.session.user && state.session.user.isAdmin) ? 'block' : 'none';
       $('membersModal').classList.add('open');
     };
     window.closeModal = function(id) { $(id).classList.remove('open'); };
 
-    // هماهنگی با تم اپ پرستاری در حالت iframe
     window.addEventListener('message', (ev) => {
       const msg = ev.data;
       if (msg && msg.type === 'CARDIAC_SYNC_THEME' && msg.v12Theme) {
@@ -764,7 +1173,7 @@
     });
 
     // ==========================================
-    // بارگذاری لیست بخش‌ها و احراز هویت
+    // لیست بخش‌ها و احراز هویت
     // ==========================================
     async function loadWards() {
       try {
@@ -772,6 +1181,9 @@
         const data = await res.json();
         if (data.ok && Array.isArray(data.wards)) {
           state.wards = data.wards;
+          if (!state.wards.some(w => w.id === state.selectedWardId) && state.wards[0]) {
+            state.selectedWardId = state.wards[0].id;
+          }
           renderWardGrid();
         }
       } catch (e) {
@@ -783,18 +1195,14 @@
     function renderWardGrid() {
       const grid = $('wardGrid');
       grid.innerHTML = state.wards.map(w =>
-        `<button type="button" class="ward-tile ${w.id === state.selectedWardId ? 'selected' : ''}" onclick="selectWard('${w.id}')">
-          <div class="wt-top"><span>${w.icon} ${esc(w.name)}</span></div>
+        `<button type="button" class="ward-tile ${w.id === state.selectedWardId ? 'selected' : ''}" onclick="selectWard('${esc(w.id)}')">
+          <div class="wt-top"><span>${esc(w.icon)} ${esc(w.name)}</span><span>${w.settings && w.settings.locked ? '🔒' : ''}</span></div>
           <div class="wt-desc">${esc(w.desc)}</div>
-          <div class="wt-meta">💬 ${w.msgCount} پیام | 📚 ${w.eduCount} آموزشی</div>
+          <div class="wt-meta">💬 ${w.msgCount} | 📚 ${w.eduCount} | 👥 ${w.memberCount || 0}</div>
         </button>`
       ).join('');
     }
-
-    window.selectWard = function(id) {
-      state.selectedWardId = id;
-      renderWardGrid();
-    };
+    window.selectWard = function(id) { state.selectedWardId = id; renderWardGrid(); };
 
     window.handleJoin = async function() {
       const errBox = $('authErr');
@@ -849,7 +1257,76 @@
     };
 
     // ==========================================
-    // اتصال Socket.IO و مدیریت رویدادها
+    // تغییر بین تب «چت بخش» و تب «پنل مدیریت سرپرستار»
+    // ==========================================
+    window.switchMainMode = function(mode) {
+      if (mode === 'admin' && !isAdminUser()) return;
+      state.mainMode = mode;
+      const isAdm = mode === 'admin';
+      $('tabBtnChat').classList.toggle('active', !isAdm);
+      $('tabBtnAdmin').classList.toggle('active', isAdm);
+      $('chatView').classList.toggle('hidden', isAdm);
+      $('adminPanelView').classList.toggle('active', isAdm);
+      $('hdrSearchBtn').style.display = isAdm ? 'none' : 'inline-flex';
+      if (isAdm && state.socket) {
+        state.socket.emit('admin:get_state');
+      }
+    };
+
+    function updateComposerAccessUI() {
+      const bar = $('roomNoticeBar');
+      const input = $('msgInput');
+      const sendBtn = $('btnSend');
+      const attBtn = $('btnAttach');
+      const voiceBtn = $('btnVoice');
+      const admin = isAdminUser();
+      const mod = isModOrAdmin();
+      const s = state.wardSettings || {};
+      const ms = state.memberStatus || {};
+
+      let notices = [];
+      let isDanger = false;
+      let disableText = false;
+      let disableMedia = false;
+
+      if (!admin && ms.muted) {
+        disableText = true;
+        disableMedia = true;
+        isDanger = true;
+        const untilTxt = ms.mutedUntil === 'permanent' ? 'تا رفع توسط سرپرستار' : ('تا ' + fmtTime(ms.mutedUntil));
+        notices.push(`🔇 شما توسط سرپرستار سکوت شده‌اید (${untilTxt})${ms.muteReason ? ' — علت: ' + ms.muteReason : ''}`);
+      } else if (s.locked && !mod) {
+        disableText = true;
+        disableMedia = true;
+        notices.push('🔒 چت این بخش توسط سرپرستار قفل شده است (حالت فقط‌خواندنی)');
+      } else {
+        if (s.locked && mod) notices.push('🔒 چت بخش برای کاربران عادی قفل است (شما دسترسی ارسال دارید)');
+        if (s.disableMedia && !mod) {
+          disableMedia = true;
+          notices.push('📎 ارسال فایل، عکس و ویس توسط سرپرستار غیرفعال است');
+        }
+        if (s.slowModeSec > 0 && !mod) {
+          notices.push(`⏱ حالت آرام فعال است (فاصله هر پیام: ${s.slowModeSec} ثانیه)`);
+        }
+      }
+
+      if (notices.length) {
+        bar.textContent = notices.join('  |  ');
+        bar.classList.add('show');
+        bar.classList.toggle('danger', isDanger);
+      } else {
+        bar.classList.remove('show', 'danger');
+      }
+
+      input.disabled = disableText;
+      sendBtn.disabled = disableText;
+      attBtn.disabled = disableMedia;
+      voiceBtn.disabled = disableMedia;
+      input.placeholder = disableText ? 'امکان ارسال پیام در حال حاضر بسته است...' : 'پیام کاری، لینک یا نکته آموزشی بنویسید...';
+    }
+
+    // ==========================================
+    // اتصال Socket.IO
     // ==========================================
     function enterChatRoom() {
       const s = state.session;
@@ -858,6 +1335,8 @@
       $('chatApp').classList.add('active');
       $('hdrIcon').textContent = s.ward.icon || '💬';
       $('hdrWardName').textContent = s.ward.name;
+      $('adminModeTabs').classList.toggle('show', Boolean(s.user && s.user.isAdmin));
+      window.switchMainMode('chat');
       connectSocket();
     }
 
@@ -878,6 +1357,7 @@
         state.socket.on('ward:history', (msgs) => {
           state.messages = Array.isArray(msgs) ? msgs : [];
           renderMessages(true);
+          if (isAdminUser()) renderAdminPinnedList();
         });
 
         state.socket.on('ward:online', (list) => {
@@ -886,20 +1366,50 @@
           $('hdrOnlineText').textContent = `${state.online.length} نفر آنلاین در بخش`;
         });
 
+        state.socket.on('ward:settings_updated', (settings) => {
+          state.wardSettings = settings || state.wardSettings;
+          updateComposerAccessUI();
+        });
+
+        state.socket.on('ward:member_status', (statusObj) => {
+          state.memberStatus = statusObj || state.memberStatus;
+          updateComposerAccessUI();
+          if (statusObj && statusObj.muted && !isAdminUser()) {
+            toast('🔇 دسترسی ارسال پیام شما توسط سرپرستار محدود (سکوت) شد');
+          }
+        });
+
+        state.socket.on('ward:kicked', ({ reason } = {}) => {
+          alert('⛔ ' + (reason || 'شما توسط سرپرستار از این بخش خارج شدید.'));
+          try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+          state.session = null;
+          $('chatApp').classList.remove('active');
+          $('authScreen').style.display = 'flex';
+          loadWards();
+        });
+
+        state.socket.on('admin:state', (snap) => {
+          state.adminState = snap;
+          renderAdminPanel();
+        });
+
         state.socket.on('msg:new', (msg) => {
           state.messages.push(msg);
           renderMessages(true);
+          if (isAdminUser()) renderAdminPinnedList();
         });
 
         state.socket.on('msg:updated', (updated) => {
           const idx = state.messages.findIndex(m => m.id === updated.id);
           if (idx !== -1) state.messages[idx] = updated;
           renderMessages(false);
+          if (isAdminUser()) renderAdminPinnedList();
         });
 
         state.socket.on('msg:deleted', ({ msgId }) => {
           state.messages = state.messages.filter(m => m.id !== msgId);
           renderMessages(false);
+          if (isAdminUser()) renderAdminPinnedList();
         });
 
         state.socket.on('ward:typing', ({ name, isTyping }) => {
@@ -922,12 +1432,18 @@
         if (!resp || !resp.ok) {
           toast(resp && resp.error ? resp.error : 'احراز هویت بخش منقضی شد');
           window.switchWardScreen();
+          return;
         }
+        state.session.user = resp.user;
+        state.session.ward = resp.ward;
+        $('adminModeTabs').classList.toggle('show', Boolean(resp.isAdmin));
+        try { localStorage.setItem(SESSION_KEY, JSON.stringify(state.session)); } catch (e) {}
+        updateComposerAccessUI();
       });
     }
 
     // ==========================================
-    // رندر پیام‌ها، فیلتر و جستجو
+    // رندر پیام‌ها (با دکمه‌های مدیریتی سریع برای سرپرستار)
     // ==========================================
     function getFilteredMessages() {
       const q = state.search.trim().toLowerCase();
@@ -957,7 +1473,6 @@
         bar.classList.remove('show');
       }
     }
-
     window.jumpToPinned = function() {
       const id = $('pinnedBar').dataset.msgId;
       if (!id) return;
@@ -995,6 +1510,8 @@
       const wrap = $('messagesWrap');
       const list = getFilteredMessages();
       const me = state.session && state.session.user;
+      const admin = isAdminUser();
+      const mod = isModOrAdmin();
 
       if (!list.length) {
         wrap.innerHTML = `<div class="empty-state">
@@ -1006,25 +1523,37 @@
 
       wrap.innerHTML = list.map(m => {
         const isMine = me && m.senderId === me.id;
-        const canDel = me && (me.isAdmin || isMine);
+        const canDel = mod || isMine;
         const reactions = m.reactions || {};
         const reactHtml = Object.keys(reactions).map(em =>
-          `<button type="button" class="react-pill" onclick="reactMsg('${m.id}','${em}')">${em} ${reactions[em].length}</button>`
+          `<button type="button" class="react-pill" onclick="reactMsg('${esc(m.id)}','${em}')">${em} ${reactions[em].length}</button>`
         ).join('');
         const linksHtml = (m.links || []).map(l =>
           `<a class="link-card" href="${esc(l)}" target="_blank" rel="noopener noreferrer">🔗 <span>${esc(l)}</span></a>`
         ).join('');
 
-        return `<div class="msg-row ${isMine ? 'mine' : 'other'}" id="msg_${esc(m.id)}">
-          <div class="msg-bubble ${m.isEducational ? 'edu-bubble' : ''} ${m.pinned ? 'pinned-bubble' : ''}">
+        const rowCls = m.isAnnouncement ? 'announcement' : (isMine ? 'mine' : 'other');
+        const bubbleCls = [
+          'msg-bubble',
+          m.isAnnouncement ? 'ann-bubble' : (m.isEducational ? 'edu-bubble' : ''),
+          m.pinned ? 'pinned-bubble' : ''
+        ].join(' ');
+
+        const roleCls = m.senderIsAdmin ? 'admin-badge' : (m.senderIsModerator ? 'mod-badge' : '');
+
+        return `<div class="msg-row ${rowCls}" id="msg_${esc(m.id)}">
+          <div class="${bubbleCls}">
             <div class="msg-head">
               <div class="msg-sender">
                 <span>${esc(m.senderName)}</span>
-                <span class="role-badge ${m.senderIsAdmin ? 'admin-badge' : ''}">${esc(m.senderRole)}</span>
+                <span class="role-badge ${roleCls}">${esc(m.senderRole)}${m.senderIsAdmin ? ' ★' : (m.senderIsModerator ? ' ⭐' : '')}</span>
               </div>
               <span>${m.pinned ? '📌' : ''}</span>
             </div>
-            ${m.isEducational ? `<div class="edu-badge">📚 ${esc(m.eduTag || 'آموزش بالینی')}</div>` : ''}
+            <div>
+              ${m.isAnnouncement ? '<span class="ann-badge">📢 اطلاعیه رسمی سرپرستار</span>' : ''}
+              ${m.isEducational ? `<span class="edu-badge">📚 ${esc(m.eduTag || 'آموزش بالینی')}</span>` : ''}
+            </div>
             ${m.replyTo ? `<div class="reply-quote" onclick="scrollToMsg('${esc(m.replyTo.id)}')"><b>پاسخ به ${esc(m.replyTo.senderName)}</b>${esc(m.replyTo.snippet)}</div>` : ''}
             ${m.text ? `<div class="msg-text">${linkifyText(m.text)}</div>` : ''}
             ${renderAttachment(m.attachment)}
@@ -1033,36 +1562,31 @@
             <div class="msg-foot">
               <span>${fmtTime(m.createdAt)}</span>
               <div class="msg-tools">
-                <button type="button" class="mt-btn" onclick="reactMsg('${m.id}','👍')" title="تایید">👍</button>
-                <button type="button" class="mt-btn" onclick="reactMsg('${m.id}','💡')" title="مفید بود">💡</button>
-                <button type="button" class="mt-btn" onclick="startReply('${m.id}')" title="پاسخ">↩️ پاسخ</button>
-                ${me && me.isAdmin ? `<button type="button" class="mt-btn" onclick="pinMsg('${m.id}')" title="پین">${m.pinned ? 'لغو پین' : '📌 پین'}</button>` : ''}
-                ${canDel ? `<button type="button" class="mt-btn" style="color:var(--danger);" onclick="deleteMsg('${m.id}')" title="حذف">🗑</button>` : ''}
+                <button type="button" class="mt-btn" onclick="reactMsg('${esc(m.id)}','👍')" title="تایید">👍</button>
+                <button type="button" class="mt-btn" onclick="reactMsg('${esc(m.id)}','💡')" title="مفید بود">💡</button>
+                <button type="button" class="mt-btn" onclick="startReply('${esc(m.id)}')" title="پاسخ">↩️</button>
+                ${mod ? `<button type="button" class="mt-btn" onclick="pinMsg('${esc(m.id)}')" title="پین">${m.pinned ? 'لغو پین' : '📌'}</button>` : ''}
+                ${mod ? `<button type="button" class="mt-btn" onclick="toggleMsgEdu('${esc(m.id)}')" title="تبدیل به آموزشی / عادی">📚</button>` : ''}
+                ${admin && !isMine && !m.senderIsAdmin ? `<button type="button" class="mt-btn" style="color:var(--warn);" data-mid="${esc(m.senderId)}" data-name="${esc(m.senderName)}" onclick="openMuteModalFromBtn(this)" title="سکوت کردن فرستنده">🔇</button>` : ''}
+                ${admin && !isMine && !m.senderIsAdmin ? `<button type="button" class="mt-btn" style="color:var(--danger);" data-mid="${esc(m.senderId)}" data-name="${esc(m.senderName)}" onclick="quickBanFromBtn(this)" title="مسدود کردن فرستنده">🚫</button>` : ''}
+                ${canDel ? `<button type="button" class="mt-btn" style="color:var(--danger);" onclick="deleteMsg('${esc(m.id)}')" title="حذف پیام">🗑</button>` : ''}
               </div>
             </div>
           </div>
         </div>`;
       }).join('');
 
-      if (scrollBottom) {
-        wrap.scrollTop = wrap.scrollHeight;
-      }
+      if (scrollBottom) wrap.scrollTop = wrap.scrollHeight;
     }
 
     window.scrollToMsg = function(id) {
       const el = document.getElementById('msg_' + id);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
-    window.openLightbox = function(url) {
-      $('lightboxImg').src = url;
-      $('lightboxModal').classList.add('open');
-    };
-    window.reactMsg = function(msgId, emoji) {
-      state.socket && state.socket.emit('msg:react', { msgId, emoji });
-    };
-    window.pinMsg = function(msgId) {
-      state.socket && state.socket.emit('msg:pin', { msgId });
-    };
+    window.openLightbox = function(url) { $('lightboxImg').src = url; $('lightboxModal').classList.add('open'); };
+    window.reactMsg = function(msgId, emoji) { state.socket && state.socket.emit('msg:react', { msgId, emoji }); };
+    window.pinMsg = function(msgId) { state.socket && state.socket.emit('msg:pin', { msgId }); };
+    window.toggleMsgEdu = function(msgId) { state.socket && state.socket.emit('msg:toggle_edu', { msgId }); };
     window.deleteMsg = function(msgId) {
       if (!confirm('این پیام حذف شود؟')) return;
       state.socket && state.socket.emit('msg:delete', { msgId });
@@ -1078,13 +1602,300 @@
       $('replyBanner').classList.add('show');
       $('msgInput').focus();
     };
-    window.cancelReply = function() {
-      state.replyTo = null;
-      $('replyBanner').classList.remove('show');
+    window.cancelReply = function() { state.replyTo = null; $('replyBanner').classList.remove('show'); };
+
+    // ==========================================
+    // رندر و عملیات پنل مدیریت سرپرستار
+    // ==========================================
+    function renderAdminPanel() {
+      const snap = state.adminState;
+      if (!snap || !isAdminUser()) return;
+
+      // نشانگر بالای تب مدیریت
+      const alertCnt = (snap.stats.mutedMembers || 0) + (snap.stats.bannedMembers || 0);
+      const badge = $('adminAlertBadge');
+      if (alertCnt > 0) {
+        badge.textContent = alertCnt;
+        badge.style.display = 'inline-block';
+      } else {
+        badge.style.display = 'none';
+      }
+
+      // کنترل‌های اتاق
+      const st = snap.settings || {};
+      const swL = $('swLocked');
+      swL.textContent = st.locked ? 'قفل (روشن)' : 'باز (خاموش)';
+      swL.className = 'switch-btn' + (st.locked ? ' locked-on' : '');
+
+      const swM = $('swMedia');
+      swM.textContent = st.disableMedia ? 'بسته (محدود)' : 'آزاد';
+      swM.className = 'switch-btn' + (st.disableMedia ? ' locked-on' : '');
+
+      const swW = $('swWhitelist');
+      swW.textContent = st.whitelistOnly ? 'بسته (تاییدشده)' : 'باز (با کد)';
+      swW.className = 'switch-btn' + (st.whitelistOnly ? ' on' : '');
+
+      $('admSlowMode').value = String(st.slowModeSec || 0);
+      $('admCurrentCode').textContent = snap.wardCode || '---';
+
+      // آمار KPI
+      const k = snap.stats || {};
+      $('admKpiGrid').innerHTML = [
+        [k.totalMessages || 0, 'کل پیام‌ها'],
+        [k.eduMessages || 0, 'مطالب آموزشی'],
+        [(k.mediaMessages || 0) + (k.fileMessages || 0), 'فایل و رسانه'],
+        [k.totalMembers || 0, 'اعضای فعال'],
+        [k.mutedMembers || 0, 'سایلنت‌شده'],
+        [k.bannedMembers || 0, 'مسدودشده']
+      ].map(pair => `<div class="kpi-box"><b>${pair[0]}</b><span>${pair[1]}</span></div>`).join('');
+
+      // گزارش اقدامات (Audit Log)
+      const logs = snap.auditLogs || [];
+      $('admAuditList').innerHTML = logs.length
+        ? logs.map(l =>
+            `<div class="audit-item">
+              <div><b>${esc(l.action)}</b> ${l.target ? `← <span style="color:var(--accent);">${esc(l.target)}</span>` : ''}</div>
+              ${l.detail ? `<div style="color:var(--muted);">${esc(l.detail)}</div>` : ''}
+              <div class="audit-time">توسط ${esc(l.actor)} • ${fmtTime(l.createdAt)}</div>
+            </div>`
+          ).join('')
+        : '<div style="font-size:12px;color:var(--muted);text-align:center;">هنوز اقدام مدیریتی ثبت نشده است.</div>';
+
+      renderAdminMembers();
+      renderAdminPinnedList();
+    }
+
+    window.renderAdminMembers = function() {
+      const snap = state.adminState;
+      if (!snap) return;
+      const q = ($('admMemberSearch').value || '').trim().toLowerCase();
+      const f = state.adminMemberFilter;
+      const me = state.session && state.session.user;
+
+      const list = (snap.members || []).filter(m => {
+        if (f === 'online' && !m.online) return false;
+        if (f === 'muted' && !m.muted) return false;
+        if (f === 'banned' && !m.banned) return false;
+        if (f === 'mod' && !m.isModerator) return false;
+        if (q && (m.name + ' ' + m.role).toLowerCase().indexOf(q) === -1) return false;
+        return true;
+      });
+
+      $('admMembersCount').textContent = `${list.length} از ${(snap.members || []).length} عضو`;
+
+      if (!list.length) {
+        $('admMembersList').innerHTML = '<div style="font-size:12px;color:var(--muted);text-align:center;padding:12px;">عضوی با این فیلتر یافت نشد.</div>';
+        return;
+      }
+
+      $('admMembersList').innerHTML = list.map(m => {
+        const isSelf = me && m.id === me.id;
+        const cardCls = 'adm-member-card' + (m.banned ? ' banned' : (m.muted ? ' muted' : ''));
+        return `<div class="${cardCls}">
+          <div class="am-top">
+            <div style="font-size:13px;font-weight:bold;">
+              ${m.online ? '<span class="live-dot" style="margin-left:5px;"></span>' : '<span style="opacity:.4;margin-left:5px;">⚪</span>'}
+              ${esc(m.name)}
+              ${isSelf ? '<span style="font-size:10px;color:var(--accent);"> (شما)</span>' : ''}
+            </div>
+            <span class="role-badge ${m.isAdmin ? 'admin-badge' : (m.isModerator ? 'mod-badge' : '')}">${esc(m.role)}</span>
+          </div>
+          <div class="am-badges">
+            ${m.online ? '<span class="status-tag st-online">آنلاین</span>' : `<span class="status-tag" style="background:rgba(128,128,128,0.16);color:var(--muted);">آخرین بازدید: ${fmtTime(m.lastSeen)}</span>`}
+            ${m.isModerator ? '<span class="status-tag st-mod">⭐ ناظر / کمک‌سرپرستار</span>' : ''}
+            ${m.muted ? `<span class="status-tag st-muted">🔇 سایلنت (${m.mutedUntil === 'permanent' ? 'دائمی' : 'تا ' + fmtTime(m.mutedUntil)})</span>` : ''}
+            ${m.banned ? '<span class="status-tag st-banned">🚫 مسدود از بخش</span>' : ''}
+          </div>
+          ${!isSelf && !m.isAdmin ? `<div class="am-actions">
+            ${m.muted
+              ? `<button type="button" class="am-btn ok" data-mid="${esc(m.id)}" data-name="${esc(m.name)}" onclick="adminUnmuteFromBtn(this)">🔊 رفع سکوت</button>`
+              : `<button type="button" class="am-btn warn" data-mid="${esc(m.id)}" data-name="${esc(m.name)}" onclick="openMuteModalFromBtn(this)">🔇 سکوت</button>`
+            }
+            ${m.online ? `<button type="button" class="am-btn warn" data-mid="${esc(m.id)}" data-name="${esc(m.name)}" onclick="adminKickFromBtn(this)">👢 اخراج</button>` : ''}
+            ${m.banned
+              ? `<button type="button" class="am-btn ok" data-mid="${esc(m.id)}" data-name="${esc(m.name)}" onclick="adminToggleBanFromBtn(this, false)">✅ رفع مسدودیت</button>`
+              : `<button type="button" class="am-btn danger" data-mid="${esc(m.id)}" data-name="${esc(m.name)}" onclick="adminToggleBanFromBtn(this, true)">🚫 مسدود</button>`
+            }
+            <button type="button" class="am-btn" data-mid="${esc(m.id)}" onclick="adminToggleModFromBtn(this, ${!m.isModerator})">${m.isModerator ? 'سلب ناظر' : '⭐ ارتقا به ناظر'}</button>
+            <button type="button" class="am-btn" data-name="${esc(m.name)}" onclick="adminPurgeUserMsgsFromBtn(this)">🧹 حذف پیام‌هایش</button>
+            <button type="button" class="am-btn danger" data-mid="${esc(m.id)}" data-name="${esc(m.name)}" onclick="adminRemoveMemberFromBtn(this)">✖ حذف عضو</button>
+          </div>` : ''}
+        </div>`;
+      }).join('');
+    };
+
+    function renderAdminPinnedList() {
+      const box = $('admPinnedList');
+      if (!box) return;
+      const pinned = state.messages.filter(m => m.pinned).reverse();
+      if (!pinned.length) {
+        box.innerHTML = '<div style="font-size:12px;color:var(--muted);text-align:center;">پیام پین‌شده‌ای وجود ندارد.</div>';
+        return;
+      }
+      box.innerHTML = pinned.map(m =>
+        `<div class="audit-item">
+          <div><b>${esc(m.senderName)}</b>: ${esc((m.text || (m.attachment && m.attachment.name) || '').slice(0, 140))}</div>
+          <div style="display:flex;gap:6px;margin-top:6px;">
+            <button type="button" class="am-btn" onclick="pinMsg('${esc(m.id)}')">📌 لغو پین</button>
+            <button type="button" class="am-btn danger" onclick="deleteMsg('${esc(m.id)}')">🗑 حذف کامل پیام</button>
+          </div>
+        </div>`
+      ).join('');
+    }
+
+    // اقدامات مدیریتی سرپرستار
+    window.adminAddMember = function() {
+      const name = $('admAddName').value.trim();
+      const role = $('admAddRole').value;
+      const isModerator = $('admAddMod').checked;
+      if (!name) { toast('❌ نام کاربر را وارد کنید'); return; }
+      state.socket.emit('admin:member_add', { name, role, isModerator }, (r) => {
+        if (r && r.ok) {
+          $('admAddName').value = '';
+          $('admAddMod').checked = false;
+          toast(`✓ «${name}» به لیست اعضای بخش اضافه شد`);
+        } else {
+          toast('❌ ' + (r && r.error ? r.error : 'خطا'));
+        }
+      });
+    };
+
+    window.openMuteModalFromBtn = function(btn) {
+      state.muteTarget = { memberId: btn.dataset.mid, name: btn.dataset.name };
+      $('muteTargetLabel').textContent = `کاربر انتخاب‌شده: ${state.muteTarget.name}`;
+      $('muteReason').value = '';
+      $('muteModal').classList.add('open');
+    };
+    window.confirmMuteUser = function() {
+      if (!state.muteTarget) return;
+      const durVal = $('muteDuration').value;
+      const durationMin = durVal === 'permanent' ? 'permanent' : Number(durVal);
+      const reason = $('muteReason').value.trim();
+      state.socket.emit('admin:member_mute', {
+        memberId: state.muteTarget.memberId,
+        name: state.muteTarget.name,
+        durationMin,
+        reason
+      }, (r) => {
+        closeModal('muteModal');
+        toast(r && r.ok ? `🔇 ${state.muteTarget.name} سکوت شد` : '❌ ' + (r && r.error || 'خطا'));
+      });
+    };
+    window.adminUnmuteFromBtn = function(btn) {
+      state.socket.emit('admin:member_mute', { memberId: btn.dataset.mid, name: btn.dataset.name, durationMin: 0 }, (r) => {
+        toast(r && r.ok ? `🔊 سکوت ${btn.dataset.name} برداشته شد` : '❌ خطا');
+      });
+    };
+    window.adminKickFromBtn = function(btn) {
+      const reason = prompt(`علت اخراج موقت «${btn.dataset.name}» از چت (اختیاری):`, '');
+      if (reason === null) return;
+      state.socket.emit('admin:member_kick', { memberId: btn.dataset.mid, name: btn.dataset.name, reason }, (r) => {
+        toast(r && r.ok ? `👢 ${btn.dataset.name} از اتاق اخراج شد` : '❌ خطا');
+      });
+    };
+    window.quickBanFromBtn = function(btn) {
+      window.adminToggleBanFromBtn(btn, true);
+    };
+    window.adminToggleBanFromBtn = function(btn, ban) {
+      const name = btn.dataset.name;
+      let reason = '';
+      if (ban) {
+        reason = prompt(`آیا مطمئنید می‌خواهید «${name}» را از ورود به این بخش مسدود کنید؟\nعلت مسدودسازی (اختیاری):`, '');
+        if (reason === null) return;
+      }
+      state.socket.emit('admin:member_ban', { memberId: btn.dataset.mid, name, ban, reason }, (r) => {
+        toast(r && r.ok ? (ban ? `🚫 ${name} مسدود شد` : `✅ مسدودیت ${name} برداشته شد`) : '❌ خطا');
+      });
+    };
+    window.adminToggleModFromBtn = function(btn, makeMod) {
+      state.socket.emit('admin:member_role', { memberId: btn.dataset.mid, isModerator: makeMod }, (r) => {
+        toast(r && r.ok ? (makeMod ? '⭐ دسترسی ناظر فعال شد' : 'دسترسی ناظر برداشته شد') : '❌ خطا');
+      });
+    };
+    window.adminRemoveMemberFromBtn = function(btn) {
+      if (!confirm(`عضویت «${btn.dataset.name}» از لیست اعضای بخش حذف شود؟`)) return;
+      state.socket.emit('admin:member_remove', { memberId: btn.dataset.mid }, (r) => {
+        toast(r && r.ok ? `✖ ${btn.dataset.name} از لیست بخش حذف شد` : '❌ خطا');
+      });
+    };
+    window.adminPurgeUserMsgsFromBtn = function(btn) {
+      const name = btn.dataset.name;
+      if (!confirm(`همه پیام‌های «${name}» در این بخش حذف شوند؟`)) return;
+      state.socket.emit('admin:messages_purge', { mode: 'by_user', targetName: name }, (r) => {
+        toast(r && r.ok ? `🧹 ${r.removed} پیام از ${name} حذف شد` : '❌ خطا');
+      });
+    };
+    window.adminPurge = function(mode) {
+      const labels = {
+        non_edu: 'تمام چت‌های عادی پاک شوند؟ (بانک آموزشی و پیام‌های پین‌شده حفظ می‌شوند)',
+        older_24h: 'پیام‌های قدیمی‌تر از ۲۴ ساعت پاک شوند؟ (مطالب آموزشی و پین حفظ می‌شوند)',
+        all: '⚠️ هشدار: کل تاریخچه چت این بخش (حتی مطالب آموزشی) به‌طور کامل پاک شود؟'
+      };
+      if (!confirm(labels[mode])) return;
+      state.socket.emit('admin:messages_purge', { mode, keepEduAndPinned: true }, (r) => {
+        toast(r && r.ok ? `🧹 پاک‌سازی انجام شد (${r.removed} پیام حذف شد)` : '❌ خطا');
+      });
+    };
+    window.adminSendAnnouncement = function() {
+      const text = $('admAnnText').value.trim();
+      if (!text) { toast('❌ متن اطلاعیه را بنویسید'); return; }
+      const allWards = $('admAnnAllWards').checked;
+      const isEducational = $('admAnnEdu').checked;
+      if (allWards && !confirm('این اطلاعیه همزمان در همه بخش‌های بیمارستان ارسال و پین شود؟')) return;
+      state.socket.emit('admin:announce', { text, allWards, isEducational, eduTag: 'پروتکل و بخشنامه' }, (r) => {
+        if (r && r.ok) {
+          $('admAnnText').value = '';
+          $('admAnnAllWards').checked = false;
+          toast(`📢 اطلاعیه رسمی در ${r.wardsCount} بخش منتشر و پین شد`);
+        } else {
+          toast('❌ ' + (r && r.error || 'خطا'));
+        }
+      });
+    };
+    window.adminToggleSetting = function(key) {
+      const cur = Boolean(state.adminState && state.adminState.settings && state.adminState.settings[key]);
+      const patch = {};
+      patch[key] = !cur;
+      state.socket.emit('admin:ward_settings', { settings: patch }, (r) => {
+        if (r && r.ok) toast('✓ تنظیمات اتاق بروزرسانی شد');
+      });
+    };
+    window.adminSetSlowMode = function(val) {
+      state.socket.emit('admin:ward_settings', { settings: { slowModeSec: Number(val) || 0 } }, (r) => {
+        if (r && r.ok) toast('✓ حالت آرام بروزرسانی شد');
+      });
+    };
+    window.adminChangeWardCode = function() {
+      const newCode = $('admNewWardCode').value.trim();
+      if (!newCode) { toast('❌ کد جدید بخش را وارد کنید'); return; }
+      state.socket.emit('admin:ward_settings', { newCode }, (r) => {
+        if (r && r.ok) {
+          $('admNewWardCode').value = '';
+          toast(`🔑 کد عضویت بخش به ${r.wardCode} تغییر یافت`);
+        } else {
+          toast('❌ ' + (r && r.error || 'خطا'));
+        }
+      });
+    };
+    window.adminCreateWard = function() {
+      const name = $('admNewWardName').value.trim();
+      const code = $('admNewWardAccess').value.trim();
+      const icon = $('admNewWardIcon').value.trim() || '🏥';
+      const desc = $('admNewWardDesc').value.trim();
+      state.socket.emit('admin:ward_create', { name, code, icon, desc }, (r) => {
+        if (r && r.ok) {
+          $('admNewWardName').value = '';
+          $('admNewWardAccess').value = '';
+          $('admNewWardDesc').value = '';
+          toast(`🏥 بخش «${r.ward.name}» با کد ${r.ward.code} ساخته شد`);
+        } else {
+          toast('❌ ' + (r && r.error || 'خطا'));
+        }
+      });
     };
 
     // ==========================================
-    // حالت آموزشی، آپلود فایل (با فشرده‌سازی عکس) و ضبط ویس
+    // حالت آموزشی، آپلود فایل و ضبط ویس
     // ==========================================
     window.toggleEduMode = function() {
       state.isEduMode = !state.isEduMode;
@@ -1092,7 +1903,6 @@
       $('eduOptions').classList.toggle('show', state.isEduMode);
       if (state.isEduMode) toast('📚 حالت ارسال «مطلب آموزشی» فعال شد');
     };
-
     window.clearPendingAttachment = function() {
       state.pendingAttachment = null;
       $('attBanner').classList.remove('show');
@@ -1100,9 +1910,7 @@
     };
 
     async function compressImageIfNeeded(file) {
-      if (!file || !/^image\/(jpeg|png|webp)$/.test(file.type) || file.size < 900 * 1024) {
-        return file;
-      }
+      if (!file || !/^image\/(jpeg|png|webp)$/.test(file.type) || file.size < 900 * 1024) return file;
       return new Promise((resolve) => {
         const img = new Image();
         const url = URL.createObjectURL(file);
@@ -1130,13 +1938,15 @@
 
     async function uploadFile(file) {
       if (!file) return;
-      if (file.size > 30 * 1024 * 1024) {
-        toast('❌ حداکثر حجم مجاز فایل ۳۰ مگابایت است');
-        return;
-      }
+      if (file.size > 30 * 1024 * 1024) { toast('❌ حداکثر حجم مجاز فایل ۳۰ مگابایت است'); return; }
       const processed = await compressImageIfNeeded(file);
       const fd = new FormData();
       fd.append('file', processed);
+      if (state.session) {
+        fd.append('wardId', state.session.ward.id);
+        fd.append('senderName', state.session.user.name);
+        if (state.session.adminCode) fd.append('adminCode', state.session.adminCode);
+      }
 
       const progWrap = $('uploadProgress');
       const progBar = $('uploadProgressBar');
@@ -1146,31 +1956,21 @@
       const xhr = new XMLHttpRequest();
       xhr.open('POST', '/api/upload');
       xhr.upload.onprogress = (e) => {
-        if (e.lengthComputable) {
-          progBar.style.width = Math.round((e.loaded / e.total) * 95) + '%';
-        }
+        if (e.lengthComputable) progBar.style.width = Math.round((e.loaded / e.total) * 95) + '%';
       };
       xhr.onload = () => {
         progWrap.classList.remove('show');
         progBar.style.width = '0%';
         try {
           const data = JSON.parse(xhr.responseText);
-          if (!data.ok) {
-            toast('❌ ' + (data.error || 'خطا در آپلود'));
-            return;
-          }
+          if (!data.ok) { toast('❌ ' + (data.error || 'خطا در آپلود')); return; }
           state.pendingAttachment = data.file;
           $('attBannerText').textContent = `📎 آماده ارسال: ${data.file.name} (${fmtBytes(data.file.size)})`;
           $('attBanner').classList.add('show');
           toast('✓ فایل آپلود شد — دکمه ارسال را بزنید');
-        } catch (e) {
-          toast('❌ خطا در پاسخ سرور هنگام آپلود');
-        }
+        } catch (e) { toast('❌ خطا در پاسخ سرور هنگام آپلود'); }
       };
-      xhr.onerror = () => {
-        progWrap.classList.remove('show');
-        toast('❌ اتصال هنگام آپلود قطع شد');
-      };
+      xhr.onerror = () => { progWrap.classList.remove('show'); toast('❌ اتصال هنگام آپلود قطع شد'); };
       xhr.send(fd);
     }
 
@@ -1202,19 +2002,14 @@
         btn.classList.add('recording');
         btn.textContent = '⏹️';
         toast('🎙️ در حال ضبط ویس... برای توقف دوباره لمس کنید');
-      } catch (e) {
-        toast('❌ دسترسی میکروفون داده نشد');
-      }
+      } catch (e) { toast('❌ دسترسی میکروفون داده نشد'); }
     };
 
     window.sendMessage = function() {
       const input = $('msgInput');
       const text = input.value.trim();
       if (!text && !state.pendingAttachment) return;
-      if (!state.socket || !state.socket.connected) {
-        toast('⚠️ اتصال به سرور برقرار نیست');
-        return;
-      }
+      if (!state.socket || !state.socket.connected) { toast('⚠️ اتصال به سرور برقرار نیست'); return; }
       state.socket.emit('msg:send', {
         text,
         attachment: state.pendingAttachment,
@@ -1224,7 +2019,7 @@
       }, (resp) => {
         if (resp && resp.ok) {
           input.value = '';
-          input.style.height = '40px';
+          input.style.height = '39px';
           window.clearPendingAttachment();
           window.cancelReply();
           state.socket.emit('typing', { isTyping: false });
@@ -1235,7 +2030,7 @@
     };
 
     // ==========================================
-    // فیلتر، جستجو و پشتیبان‌گیری ادمین
+    // جستجو، پشتیبان‌گیری و خروجی اکسل
     // ==========================================
     window.toggleSearch = function() {
       const row = $('searchRow');
@@ -1249,10 +2044,14 @@
       $('searchRow').classList.remove('open');
       renderMessages(false);
     };
-
     window.downloadBackup = function() {
       if (!state.session || !state.session.adminCode) return;
       window.open('/api/backup?adminCode=' + encodeURIComponent(state.session.adminCode), '_blank');
+    };
+    window.exportWardCsv = function(onlyEdu) {
+      if (!state.session || !state.session.adminCode) return;
+      const u = `/api/admin/export-csv?wardId=${encodeURIComponent(state.session.ward.id)}&adminCode=${encodeURIComponent(state.session.adminCode)}&onlyEdu=${onlyEdu ? '1' : '0'}`;
+      window.open(u, '_blank');
     };
     window.restoreBackup = function(input) {
       const file = input.files && input.files[0];
@@ -1264,13 +2063,17 @@
           const res = await fetch('/api/restore', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ adminCode: state.session.adminCode, messages: parsed.messages || parsed })
+            body: JSON.stringify({
+              adminCode: state.session.adminCode,
+              messages: parsed.messages || parsed,
+              wards: parsed.wards,
+              members: parsed.members,
+              auditLogs: parsed.auditLogs
+            })
           });
           const data = await res.json();
           toast(data.ok ? '✓ ' + data.message : '❌ ' + data.error);
-        } catch (e) {
-          toast('❌ فایل پشتیبان نامعتبر است');
-        }
+        } catch (e) { toast('❌ فایل پشتیبان نامعتبر است'); }
         input.value = '';
       };
       r.readAsText(file);
@@ -1280,13 +2083,11 @@
     // راه‌اندازی اولیه
     // ==========================================
     document.addEventListener('DOMContentLoaded', () => {
-      // بارگذاری تم از URL یا LocalStorage
       const params = new URLSearchParams(window.location.search);
       const urlTheme = params.get('theme');
       const savedTheme = urlTheme || (() => { try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; } })();
       window.applyTheme(savedTheme || 'obsidian-gold');
 
-      // فیلترها
       document.querySelectorAll('#filterChips .f-chip').forEach(btn => {
         btn.addEventListener('click', () => {
           state.filter = btn.dataset.filter;
@@ -1295,7 +2096,22 @@
         });
       });
 
-      // تگ‌های آموزشی
+      document.querySelectorAll('#adminSubtabs .as-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const sub = btn.dataset.sub;
+          document.querySelectorAll('#adminSubtabs .as-btn').forEach(b => b.classList.toggle('active', b === btn));
+          document.querySelectorAll('.admin-section').forEach(sec => sec.classList.toggle('active', sec.id === 'admSec_' + sub));
+        });
+      });
+
+      document.querySelectorAll('#admMemberFilters .f-chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.adminMemberFilter = btn.dataset.mf;
+          document.querySelectorAll('#admMemberFilters .f-chip').forEach(b => b.classList.toggle('active', b === btn));
+          renderAdminMembers();
+        });
+      });
+
       document.querySelectorAll('#eduOptions .edu-tag-chip').forEach(btn => {
         btn.addEventListener('click', () => {
           state.eduTag = btn.dataset.tag;
@@ -1303,21 +2119,12 @@
         });
       });
 
-      // جستجو
-      $('searchInput').addEventListener('input', (e) => {
-        state.search = e.target.value;
-        renderMessages(false);
-      });
+      $('searchInput').addEventListener('input', (e) => { state.search = e.target.value; renderMessages(false); });
+      $('fileInput').addEventListener('change', (e) => { if (e.target.files && e.target.files[0]) uploadFile(e.target.files[0]); });
 
-      // انتخاب فایل
-      $('fileInput').addEventListener('change', (e) => {
-        if (e.target.files && e.target.files[0]) uploadFile(e.target.files[0]);
-      });
-
-      // تایپ و ارسال با Enter
       const msgInput = $('msgInput');
       msgInput.addEventListener('input', () => {
-        msgInput.style.height = '40px';
+        msgInput.style.height = '39px';
         msgInput.style.height = Math.min(msgInput.scrollHeight, 120) + 'px';
         if (state.socket && state.socket.connected) {
           state.socket.emit('typing', { isTyping: true });
@@ -1326,13 +2133,9 @@
         }
       });
       msgInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
-          e.preventDefault();
-          window.sendMessage();
-        }
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); window.sendMessage(); }
       });
 
-      // بررسی نشست ذخیره‌شده
       try {
         const raw = localStorage.getItem(SESSION_KEY);
         if (raw) {
