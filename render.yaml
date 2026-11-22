@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hospital-ward-chat
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_CODE
+        value: HEAD999
